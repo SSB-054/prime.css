@@ -211,7 +211,7 @@ body {
     flex: 1;
     margin: 0 auto;
     max-width: 45rem;
-    padding: 0 0.5rem;
+    padding: 0.1rem 0.5rem 4rem 0;
     overflow-x: hidden;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -220,9 +220,9 @@ body {
 
 /* Make the header bg full width, but the content inline with body */
 header {
-    background: var(--surface-section);
+    background: var(--surface-ground);
     text-align: center;
-    padding: 2rem 0.5rem;
+    padding: 0.2rem 0.5rem;
     width: 100vw;
     position: relative;
     box-sizing: border-box;
@@ -255,30 +255,56 @@ nav {
     font-size: 1rem;
     line-height: 2;
     padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+        margin: 1rem 1rem 0 0;
+        border-radius: var(--border-radius);
+        color: var(--text) !important;
+        display: inline-block;
+        padding: 0.1rem 1rem;
+        text-decoration: none;
+        transition: 0.4s;
+        font-weight: 500;
+    }
+
+    a:hover {
+        background-color: var(--surface-hover);
+        cursor: pointer;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a.current:hover {
+        text-decoration: none;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
 }
 
-nav a {
-    margin: 1rem 1rem 0 0;
-    border: 1px solid var(--surface-border);
+nav:has(> a) {
+    justify-content: end;
+    gap: 1rem;
+
+}
+
+
+dialog {
+    border: solid 1px var(--surface-border);
     border-radius: var(--border-radius);
-    color: var(--text) !important;
-    display: inline-block;
-    padding: 0.1rem 1rem;
-    text-decoration: none;
-    transition: 0.4s;
-}
 
-nav a:hover {
-    color: var(--surface-hover) !important;
-    border-color: var(--surface-border);
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav a.current:hover {
-    text-decoration: none;
+    h2 {
+        margin: 0 0 0 0;
+    }
 }
 
 footer {
@@ -326,9 +352,11 @@ a:not([role="button"]),
 a:not([role="button"]):visited {
     color: var(--primary-color);
 }
-a[role="button"]{
-    text-decoration: none;    
+
+a[role="button"] {
+    text-decoration: none;
 }
+
 a:hover {
     text-decoration: none;
 }
@@ -341,9 +369,9 @@ input[type="reset"],
 input[type="button"] {
     border: none;
     border-radius: var(--border-radius);
-    background: var(--primary-color);
     font-size: 1rem;
-    color: var(--surface-section);
+    background: var(--primary-color);
+    color: var(--primary-color-text);
     padding: 0.7rem 0.9rem;
     margin: 0.5rem 0;
     transition: 0.4s;
@@ -361,6 +389,9 @@ select[disabled] {
     cursor: default;
     opacity: 0.5;
     cursor: not-allowed;
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+
 }
 
 input:disabled,
@@ -374,7 +405,8 @@ input[type="range"] {
     padding: 0;
 }
 
-input[type="checkbox"],input[type="radio"]{
+input[type="checkbox"],
+input[type="radio"] {
     background-color: var(--surface-50);
 }
 
@@ -392,7 +424,7 @@ input[type="submit"]:enabled:hover,
 input[type="reset"]:focus,
 input[type="reset"]:enabled:hover,
 input[type="button"]:focus,
-input[type="button"]:enabled:hover{
+input[type="button"]:enabled:hover {
     filter: brightness(1.1);
     cursor: pointer;
 }
@@ -663,31 +695,119 @@ pre code {
     padding: 0;
 }
 
+.primary {
+    &.alert {
+        padding: 0.55rem;
+        border: 1px solid var(--surface-border);
+        margin: 0.45rem;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+
+    }
+
+}
+
 .secondary {
-    background: var(--surface-50);
-    color: var(--surface-700);
+    background: var(--gray-50);
+    color: var(--gray-700);
+
+    &.outlined {
+        border: 1px solid var(--gray-200);
+    }
+
+    &.alert {
+        padding: 0.55rem;
+        border: 1px solid var(--gray-200);
+        margin: 0.45rem;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+
+    }
 }
 
 .danger {
     background: var(--red-50);
     color: var(--red-700);
+
+    &.outlined {
+        border: 1px solid var(--red-200);
+    }
+
+    &.alert {
+        padding: 0.55rem;
+        border: 1px solid var(--red-200);
+        margin: 0.45rem;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+
+    }
+}
+
+.warning {
+    background: var(--yellow-50);
+    color: var(--yellow-700);
+
+    &.outlined {
+        border: 1px solid var(--yellow-200);
+    }
+
+    &.alert {
+        padding: 0.55rem;
+        border: 1px solid var(--yellow-200);
+        margin: 0.45rem;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+
+    }
 }
 
 .success {
     background: var(--green-50);
     color: var(--green-700);
+
+    &.outlined {
+        border: 1px solid var(--green-200);
+    }
+
+    &.alert {
+        padding: 0.55rem;
+        border: 1px solid var(--green-200);
+        margin: 0.45rem;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+
+    }
 }
 
-.secondary.outlined {
-    border: 1px solid var(--surface-200);
+.info {
+    background: var(--blue-50);
+    color: var(--blue-700);
+
+    &.outlined {
+        border: 1px solid var(--blue-200);
+    }
+
+    &.alert {
+        padding: 0.55rem;
+        border: 1px solid var(--blue-200);
+        margin: 0.45rem;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+
+    }
 }
 
-.danger.outlined {
-    border: 1px solid var(--red-200);
-}
+button {
 
-.success.outlined {
-    border: 1px solid var(--green-200);
+
+    &.small {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    &.large {
+        padding: 1rem 1.1rem;
+    }
 }
 
 form p:not(:has(input[type="radio"]), :has(input[type="checkbox"])) {
@@ -699,5 +819,119 @@ form p:not(:has(input[type="radio"]), :has(input[type="checkbox"])) {
     margin: 0.15rem;
 }
 
-@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap";
+form {
+    .helptext {
+        font-size: 0.85rem;
+        color: var(--text-color);
+    }
 
+    .errorlist {
+        font-size: 0.85rem;
+        color: var(--red-700);
+
+    }
+
+    p:not(:has(+ input[type="checkbox"])) p:not(:has(+ input[type="radio"])) {
+        display: flex;
+        flex-direction: column;
+        color: var(--text-color);
+    }
+
+    ul {
+        list-style: none;
+        color: var(--text-color-secondary);
+        font-size: 0.85rem;
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+
+label:has(+ input[required])::after {
+    content: " *";
+    color: var(--red-400);
+}
+
+.card {
+    padding: 1.15rem;
+    background: white;
+    border-radius: 8px;
+    margin: 16px;
+    border: 1px solid var(--surface-border);
+
+    h2,
+    h3,
+    h4 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        color: var(--text-color);
+    }
+
+
+    p {
+        color: var(--text-color-secondary)
+    }
+
+    &.elevated {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media screen and (max-width:600px) {
+    nav {
+        gap: 0.25rem;
+        flex-flow: wrap;
+
+        a {
+            margin: 0.55rem 0.55rem 0 0;
+            padding: 0.1rem 0.5rem;
+        }
+
+        div {
+            flex-flow: wrap;
+        }
+    }
+
+    .flex {
+        flex-wrap: wrap;
+    }
+
+
+}
+
+.tabs {
+    input[type="radio"] {
+        display: none;
+    }
+
+
+    label {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        border: 1px solid #ddd;
+        margin-right: -1px;
+        margin-bottom: -1px;
+    }
+
+    input[type="radio"]:checked+label+.container {
+        background-color: white;
+        border-bottom: 1px solid white;
+        z-index: 1;
+        position: relative;
+        display: block;
+
+    }
+
+    
+    .container {
+        order: 999; 
+        border: 1px solid #ddd !important;
+        padding: 20px;
+        display: none;
+    }
+
+}
+
+@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap";

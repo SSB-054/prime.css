@@ -12,162 +12,366 @@
 
 <body>
 
+    <header class="p-4">
+        <h1>Prime.css</h1>
+        <p>A minimalistic CSS library that works directly with HTML elements</p>
 
 
-    <!-- Headings -->
-    <h2>Headings</h2>
+    </header>
+
+    <h2>Change Themes</h2>
     <section>
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
-    </section>
-    <pre></pre>
-
-
-
-    <!-- Paragraphs and Links -->
-    <h2>Text and Links</h2>
-    <section>
-        <p>
-            This is a sample paragraph.
-            <a href="#">This is a link.</a>
-            Notice how the text and link are styled.
-        </p>
-    </section>
-    <pre></pre>
-
-    <h2>Inline elements</h2>
-    <section>
-        <p><a href="#!">This is a text link</a>.</p>
-        <p><strong>Strong is used to indicate strong importance.</strong></p>
-        <p><em>This text has added emphasis.</em></p>
-        <p>The <b>b element</b> is stylistically different text from normal text, without any special
-            importance.</p>
-        <p>The <i>i element</i> is text that is offset from the normal text.</p>
-        <p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual
-            annotation.</p>
-        <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
-        <p><s>This text has a strikethrough</s>.</p>
-        <p>Superscript<sup>®</sup>.</p>
-        <p>Subscript for things like H<sub>2</sub>O.</p>
-        <p><small>This small text is small for fine print, etc.</small></p>
-        <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
-        <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline
-                quotation.</q></p>
-        <p><cite>This is a citation.</cite></p>
-        <p>The <dfn>dfn element</dfn> indicates a definition.</p>
-        <p>The <mark>mark element</mark> indicates a highlight.</p>
-        <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
-        <p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
-    </section>
-
-    <h2>Apply Theme Easily</h2>
-    <section>
-        <div class="flex gap-2">
-            <button class="bg-green-100 text-green-800"
-                onclick="document.querySelector('html').setAttribute('theme','green')">Green</button>
-            <button class="bg-pink-100 text-pink-800"
-                onclick="document.querySelector('html').setAttribute('theme','pink')">Pink</button>
-            <button class="bg-purple-100 text-purple-800"
-                onclick="document.querySelector('html').setAttribute('theme','purple')">Purple</button>
-            <button class="bg-blue-100 text-blue-800"
-                onclick="document.querySelector('html').setAttribute('theme','blue')">Blue</button>
-            <button class="bg-orange-100 text-orange-800"
-                onclick="document.querySelector('html').setAttribute('theme','orange')">Orange</button>
+        <div class="flex gap-2 my-4">
             <button class="bg-gray-100 text-gray-800"
                 onclick="document.querySelector('html').setAttribute('theme','light')">Light</button>
             <button class="bg-gray-700 text-gray-50"
                 onclick="document.querySelector('html').setAttribute('theme','dark')">Dark</button>
+            <button class="bg-green-100 text-green-800"
+                onclick="document.querySelector('html').setAttribute('theme','green')">Green</button>
+            <button class="bg-blue-100 text-blue-800"
+                onclick="document.querySelector('html').setAttribute('theme','blue')">Blue</button>
+            <button class="bg-purple-100 text-purple-800"
+                onclick="document.querySelector('html').setAttribute('theme','purple')">Purple</button>
+            <button class="bg-pink-100 text-pink-800"
+                onclick="document.querySelector('html').setAttribute('theme','pink')">Pink</button>
+            <button class="bg-orange-100 text-orange-800"
+                onclick="document.querySelector('html').setAttribute('theme','orange')">Orange</button>
         </div>
-        <pre>document.querySelector(&#39;html&#39;).setAttribute(&#39;theme&#39;,&#39;green&#39;);</pre>
+        <div>
+            <pre>document.querySelector(&#39;html&#39;).setAttribute(&#39;theme&#39;,&#39;green&#39;);</pre>
+        </div>
     </section>
 
 
-    <!-- Buttons -->
-    <h2>Buttons</h2>
+    <!-- Headings -->
+    <h2>Typography</h2>
     <section>
-        <button>Primary Button</button>
-        <a href="#" role="button">a</a>
-        <button class="secondary">Secondary </button>
-        <button class="success">Success </button>
-        <button class="danger ">Danger </button>
-        <button class="secondary outlined">Secondary </button>
-        <button class="success outlined">Success </button>
-        <button class="danger outlined">Danger </button>
+        <h1>Heading 1 - Main Title</h1>
+        <h2>Heading 2 - Section Title</h2>
+        <h3>Heading 3 - Subsection Title</h3>
+        <h4>Heading 4 - Small Section</h4>
+        <h5>Heading 5 - Minor Title</h5>
+        <h6>Heading 6 - Small Title</h6>
+    </section>
+    <pre></pre>
+
+
+
+
+
+    <h3>Text Styles</h3>
+    <section>
+        <p>Regular paragraph text with <strong>bold text</strong> and <em>emphasized text</em>.</p>
+        <p><mark>Highlighted text</mark> and <code>inline code</code></p>
+        <p><del>Deleted text</del> and <ins>inserted text</ins></p>
+        <p>Superscript<sup>®</sup> and Subscript H<sub>2</sub>O</p>
+        <p><small>Small text for footnotes or legal text</small></p>
+        <p><kbd>Ctrl</kbd> + <kbd>C</kbd> for keyboard shortcuts</p>
+    </section>
+
+
+    <h2>Blockquotes</h2>
+    <section>
+
+        <blockquote>
+            <p>A block quotation (also known as a long quotation or extract) is a quotation in a written
+                document, that is set off from the main text as a paragraph, or block of text.</p>
+            <p>It is typically distinguished visually using indentation and a different typeface or
+                smaller size quotation. It may or may not include a citation, usually placed at the
+                bottom.</p>
+            <cite><a href="#!">Said no one, ever.</a></cite>
+        </blockquote>
+    </section>
+    <pre></pre>
+
+    <h3>Buttons</h3>
+    <section class="flex gap-2">
+        <button class="primary">Primary</button>
+        <button class="secondary">Secondary</button>
+        <button class="success">Success</button>
+        <button class="danger">Danger</button>
+        <button class="warning">Warning</button>
+        <button class="info">Info</button>
+        <button disabled>Disabled</button>
+    </section>
+    <pre></pre>
+
+    <section class="flex gap-2 mt-2">
+        <button class="primary outlined">Primary Outlined</button>
+        <button class="secondary outlined">Secondary Outlined</button>
+        <button class="success outlined">Success Outlined</button>
+        <button class="danger outlined">Danger Outlined</button>
+    </section>
+    <pre></pre>
+
+    <section class="flex gap-2 mt-2">
+        <button class="small">Small</button>
+        <button>Regular</button>
+        <button class="large">Large</button>
+    </section>
+    <pre></pre>
+
+
+    <h3>Cards</h3>
+    <section>
+        <div class="card">
+            <h4>Basic Card</h4>
+            <p>Simple card with some content.</p>
+        </div>
+
+        <!-- elevated-->
+        <div class="card elevated">
+            <h4>Elevated Card</h4>
+            <p>Card with shadow elevation.</p>
+            <button>Action</button>
+        </div>
 
     </section>
     <pre></pre>
 
 
+    <h3>Alerts</h3>
+
+    <section>
+        <div class="alert info">
+            <strong>Info!</strong> This is an informational message.
+        </div>
+        <div class="alert success">
+            <strong>Success!</strong> Operation completed successfully.
+        </div>
+        <div class="alert warning">
+            <strong>Warning!</strong> Please proceed with caution.
+        </div>
+        <div class="alert danger">
+            <strong>Error!</strong> Something went wrong.
+        </div>
+    </section>
+    <pre></pre>
+
+
+    <h3>Progress Indicators</h3>
+    <section>
+        <div>
+            <label>Determinate Progress</label>
+            <progress value="70" max="100">70%</progress>
+        </div>
+        <div>
+            <label>Indeterminate Progress</label>
+            <progress></progress>
+        </div>
+        <div>
+            <label>Custom Meter</label>
+            <meter value="0.6">60%</meter>
+        </div>
+
+    </section>
+    <pre></pre>
+
     <!-- Forms -->
     <h2>Forms</h2>
-    <section>
+    <section id="forms">
+
         <form>
+            <!-- Text Inputs -->
             <p>
-                <label for="name">Name</label>
-                <input id="name" type="text" class="input" placeholder="Enter your name" />
+                <label for="text-input">Text Input</label>
+                <input type="text" id="text-input" placeholder="Enter text" required>
             </p>
+
             <p>
-                <label for="email">Email</label>
-                <input id="email" type="email" class="input" placeholder="Enter your email" />
+                <label for="textarea">Textarea</label>
+                <textarea id="textarea" rows="3" placeholder="Enter long text"></textarea>
             </p>
+
+            <!-- Select -->
             <p>
-                <label for="comments">Comments</label>
-                <textarea id="comments" rows="3" class="input"></textarea>
+                <label for="select">Select</label>
+                <select id="select">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
             </p>
+
+            <!-- Checkboxes -->
             <p>
-                <input type="checkbox" id="subscribe" class="checkbox" />
-                <label for="subscribe">Subscribe to newsletter</label>
+                <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    Default Checkbox
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="switch">
+                    Switch Style
+                </label>
             </p>
+
+            <!-- Radio Buttons -->
             <p>
-                <input type="radio" id="gender-male" name="gender" value="male" class="p-radiobutton p-component" />
-                <label for="gender-male">Male</label>
+                <label>
+                    <input type="radio" name="radio" checked>
+                    Option One
+                </label>
+                <label>
+                    <input type="radio" name="radio">
+                    Option Two
+                </label>
             </p>
+
+            <!-- Range -->
             <p>
-                <label for="gender-female">Female</label>
-                <input type="radio" id="gender-female" name="gender" value="female" class="radio" />
+                <label for="range">Range</label>
+                <input type="range" id="range" min="0" max="100" value="50">
             </p>
-            <button type="submit" class="button">Submit</button>
+
+            <input type="submit" value="<input type=submit>">
+            <input type="button" value="<input type=button>">
+            <input type="reset" value="<input type=reset>">
+            <input type="submit" value="<input disabled>" disabled>
         </form>
     </section>
     <pre></pre>
 
 
 
+    <h2>Navbar 1 </h2>
+    <section>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </section>
+    <pre></pre>
 
-    <!-- Lists -->
-    <h2>Lists</h2>
+    <h2>Navbar 2 </h2>
+    <section>
+        <nav>
+            <div>
+                <a href="#">Brand</a>
+            </div>
+            <div>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+
+            </div>
+        </nav>
+    </section>
+    <pre></pre>
+
+    <h2>Tabs</h2>
+    <section>
+        <div class="tabs">
+            <input type="radio" name="tabs" id="tab1" checked>
+            <label for="tab1">Tab 1</label>
+            <div class="container">
+                <h2>Content 1</h2>
+                <p>This is the content for tab 1.</p>
+            </div>
+
+            <input type="radio" name="tabs" id="tab2">
+            <label for="tab2">Tab 2</label>
+            <div class="container">
+                <h2>Content 2</h2>
+                <p>This is the content for tab 2.</p>
+            </div>
+
+            <input type="radio" name="tabs" id="tab3">
+            <label for="tab3">Tab 3</label>
+            <div class="container">
+                <h2>Content 3</h2>
+                <p>This is the content for tab 3.</p>
+            </div>
+        </div>
+    </section>
+    <pre></pre>
+
+    <h3>Unordered List</h3>
     <section>
         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
+            <li>List item one</li>
+            <li>List item two</li>
+            <li>List item three</li>
         </ul>
+    </section>
+    <pre></pre>
+
+    <h3>Ordered List</h3>
+    <section>
         <ol>
-            <li>First</li>
-            <li>Second</li>
-            <li>Third</li>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
         </ol>
     </section>
     <pre></pre>
 
 
-    <!-- Navigation Bar -->
-    <h2>Navigation Bar</h2>
+    <h3>Definition List</h3>
     <section>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <dl>
+            <dt>Term 1</dt>
+            <dd>Definition 1</dd>
+            <dt>Term 2</dt>
+            <dd>Definition 2</dd>
+        </dl>
     </section>
     <pre></pre>
+
+
+
+    <!-- Tables -->
+    <h2>Tables</h2>
+    <section id="tables">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cell 1</td>
+                    <td>Cell 2</td>
+                    <td>Cell 3</td>
+                </tr>
+                <tr>
+                    <td>Cell 4</td>
+                    <td>Cell 5</td>
+                    <td>Cell 6</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <h2>Utility Classes</h2>
+    <h3>Spacing</h3>
+    <section>
+        <div class="flex gap-2">
+            <div class="p-2 bg-gray-200">p-2</div>
+            <div class="p-4 bg-gray-200">p-4</div>
+            <div class="p-6 bg-gray-200">p-6</div>
+        </div>
+    </section>
+
+    <h3>Flexbox</h3>
+    <section>
+        <div class="flex gap-2 mb-2">
+            <div class="p-2 bg-gray-200">Flex 1</div>
+            <div class="p-2 bg-gray-200">Flex 2</div>
+            <div class="p-2 bg-gray-200">Flex 3</div>
+        </div>
+        <div class="flex flex-col gap-2">
+            <div class="p-2 bg-gray-200">Column 1</div>
+            <div class="p-2 bg-gray-200">Column 2</div>
+        </div>
+
+    </section>
 
 
     <h2>Details / Summary</h2>
@@ -206,32 +410,6 @@
         </p>
     </section>
 
-    <!-- Tables -->
-    <section>
-        <h2>Tables</h2>
-        <table class="p-datatable">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>John Doe</td>
-                    <td>28</td>
-                    <td>Male</td>
-                </tr>
-                <tr>
-                    <td>Jane Smith</td>
-                    <td>24</td>
-                    <td>Female</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
 
     <h2>Code</h2>
     <section id="text__code">
@@ -240,13 +418,7 @@
         <p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp>
         </p>
         <h2>Pre-formatted text</h2>
-        <pre>P R E F O R M A T T E D T E X T
-! " # $ % &amp; ' ( ) * + , - . /
-0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
-@ A B C D E F G H I J K L M N O
-P Q R S T U V W X Y Z [ \ ] ^ _
-` a b c d e f g h i j k l m n o
-p q r s t u v w x y z { | } ~ </pre>
+        <pre>P R E F O R M A T T E D T E X T</pre>
 
 
     </section>
@@ -254,7 +426,7 @@ p q r s t u v w x y z { | } ~ </pre>
 
 
     <!-- More Form-->
-    <h2>Form elements</h2>
+    <h2>More Form elements</h2>
     <section>
         <form>
             <fieldset>
@@ -321,12 +493,24 @@ p q r s t u v w x y z { | } ~ </pre>
                 <legend>Checkboxes</legend>
                 <p>Nested <code>label > input</code></p>
                 <ul>
-                    <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
-                            Choice A</label></li>
-                    <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice
-                            B</label></li>
-                    <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice
-                            C</label></li>
+                    <li>
+                        <label for="checkbox1">
+                            <input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
+                            Choice A
+                        </label>
+                    </li>
+                    <li>
+                        <label for="checkbox2">
+                            <input id="checkbox2" name="checkbox" type="checkbox"> Choice
+                            B
+                        </label>
+                    </li>
+                    <li>
+                        <label for="checkbox3">
+                            <input id="checkbox3" name="checkbox" type="checkbox"> Choice
+                            C
+                        </label>
+                    </li>
                 </ul>
                 <p>Sibling <code>input + label</code></p>
                 <ul>
@@ -424,40 +608,11 @@ p q r s t u v w x y z { | } ~ </pre>
                 </p>
             </fieldset>
 
-            <fieldset>
-                <legend>Action buttons</legend>
-                <p>
-                    <input type="submit" value="<input type=submit>">
-                    <input type="button" value="<input type=button>">
-                    <input type="reset" value="<input type=reset>">
-                    <input type="submit" value="<input disabled>" disabled>
-                </p>
-                <p>
-                    <button type="submit">&lt;button type=submit&gt;</button>
-                    <button type="button">&lt;button type=button&gt;</button>
-                    <button type="reset">&lt;button type=reset&gt;</button>
-                    <button type="button" disabled>&lt;button disabled&gt;</button>
-                </p>
-
-            </fieldset>
-
         </form>
     </section>
 
 
-    <h2>Blockquotes</h2>
-    <section>
 
-        <blockquote>
-            <p>A block quotation (also known as a long quotation or extract) is a quotation in a written
-                document, that is set off from the main text as a paragraph, or block of text.</p>
-            <p>It is typically distinguished visually using indentation and a different typeface or
-                smaller size quotation. It may or may not include a citation, usually placed at the
-                bottom.</p>
-            <cite><a href="#!">Said no one, ever.</a></cite>
-        </blockquote>
-    </section>
-    <pre></pre>
 
     <h2>Dialog</h2>
     <section>
@@ -479,47 +634,17 @@ p q r s t u v w x y z { | } ~ </pre>
     </section>
     <pre></pre>
 
+    <footer class="p-4 text-center">
+        <p>Prime.css - A minimalistic CSS library</p>
+    </footer>
 
-    <h2>Meter & Progress</h2>
-    <section class="flex flex-column">
-        <meter value="2" min="0" max="10">2 out of 10</meter>
-
-        <label for="progress-bar">No attributes (indeterminate)</label>
-        <progress id="progress-bar">progress</progress>
-        <label for="progress-30">30%, max 100%</label>
-        <progress id="progress-30" max="100" value="30">30%</progress>
-    </section>
-
-    <h3>PrimeIcons</h3>
-    <section class="card">
-        <div class="grid text-center">
-            <div class="col-12 md:col-2 mb-5">
-                <i class="mb-3 pi pi-folder-plus text-2xl text-color-secondary"></i>
-                <div>pi-folder-plus</div>
-            </div>
-            <div class="col-12 md:col-2 mb-5"><i class="mb-3 pi pi-receipt text-2xl text-color-secondary"></i>
-                <div>pi-receipt</div>
-            </div>
-            <div class="col-12 md:col-2 mb-5"><i class="mb-3 pi pi-asterisk text-2xl text-color-secondary"></i>
-                <div>pi-asterisk</div>
-            </div>
-            <div class="col-12 md:col-2 mb-5"><i class="mb-3 pi pi-face-smile text-2xl text-color-secondary"></i>
-                <div>pi-face-smile</div>
-            </div>
-            <div class="col-12 md:col-2 mb-5"><i class="mb-3 pi pi-pinterest text-2xl text-color-secondary"></i>
-                <div>pi-pinterest</div>
-            </div>
-
-        </div>
-    </section>
-    
 
     <script>
         // 
         document.querySelectorAll('section').forEach(node => {
-            const HTML = node.innerHTML;
+            const HTML = node.innerHTML.split('\n');
             if (node.nextElementSibling && node.nextElementSibling.nodeName == 'PRE') {
-                node.nextElementSibling.textContent = HTML.trim().replace(/ {4}/g, ' ');
+                node.nextElementSibling.textContent = HTML.map(e => e.trim()).filter(e => e).join('\n');
             }
         })
     </script>
