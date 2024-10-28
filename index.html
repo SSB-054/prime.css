@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime.css</title>
+    <link rel="stylesheet" href="src/base/base.scss">
+    <link rel="stylesheet" href="src/theme/theme.scss">
+
+</head>
+
+<body>
+
+
+
+    <!-- Headings -->
+    <h2>Headings</h2>
+    <section>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+    </section>
+    <pre></pre>
+
+
+
+    <!-- Paragraphs and Links -->
+    <h2>Text and Links</h2>
+    <section>
+        <p>
+            This is a sample paragraph.
+            <a href="#">This is a link.</a>
+            Notice how the text and link are styled.
+        </p>
+    </section>
+    <pre></pre>
+
+    <h2>Inline elements</h2>
+    <section>
+        <p><a href="#!">This is a text link</a>.</p>
+        <p><strong>Strong is used to indicate strong importance.</strong></p>
+        <p><em>This text has added emphasis.</em></p>
+        <p>The <b>b element</b> is stylistically different text from normal text, without any special
+            importance.</p>
+        <p>The <i>i element</i> is text that is offset from the normal text.</p>
+        <p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual
+            annotation.</p>
+        <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
+        <p><s>This text has a strikethrough</s>.</p>
+        <p>Superscript<sup>®</sup>.</p>
+        <p>Subscript for things like H<sub>2</sub>O.</p>
+        <p><small>This small text is small for fine print, etc.</small></p>
+        <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+        <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline
+                quotation.</q></p>
+        <p><cite>This is a citation.</cite></p>
+        <p>The <dfn>dfn element</dfn> indicates a definition.</p>
+        <p>The <mark>mark element</mark> indicates a highlight.</p>
+        <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
+        <p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
+    </section>
+
+    <h2>Apply Theme Easily</h2>
+    <section>
+        <div class="flex gap-2">
+            <button class="bg-green-100 text-green-800"
+                onclick="document.querySelector('html').setAttribute('theme','green')">Green</button>
+            <button class="bg-pink-100 text-pink-800"
+                onclick="document.querySelector('html').setAttribute('theme','pink')">Pink</button>
+            <button class="bg-purple-100 text-purple-800"
+                onclick="document.querySelector('html').setAttribute('theme','purple')">Purple</button>
+            <button class="bg-blue-100 text-blue-800"
+                onclick="document.querySelector('html').setAttribute('theme','blue')">Blue</button>
+            <button class="bg-orange-100 text-orange-800"
+                onclick="document.querySelector('html').setAttribute('theme','orange')">Orange</button>
+            <button class="bg-gray-100 text-gray-800"
+                onclick="document.querySelector('html').setAttribute('theme','light')">Light</button>
+            <button class="bg-gray-700 text-gray-50"
+                onclick="document.querySelector('html').setAttribute('theme','dark')">Dark</button>
+        </div>
+        <pre>document.querySelector(&#39;html&#39;).setAttribute(&#39;theme&#39;,&#39;green&#39;);</pre>
+    </section>
+
+
+    <!-- Buttons -->
+    <h2>Buttons</h2>
+    <section>
+        <button>Primary Button</button>
+        <a href="#" role="button">a</a>
+        <button class="secondary">Secondary </button>
+        <button class="success">Success </button>
+        <button class="danger ">Danger </button>
+        <button class="secondary outlined">Secondary </button>
+        <button class="success outlined">Success </button>
+        <button class="danger outlined">Danger </button>
+
+    </section>
+    <pre></pre>
+
+
+    <!-- Forms -->
+    <h2>Forms</h2>
+    <section>
+        <form>
+            <p>
+                <label for="name">Name</label>
+                <input id="name" type="text" class="input" placeholder="Enter your name" />
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input id="email" type="email" class="input" placeholder="Enter your email" />
+            </p>
+            <p>
+                <label for="comments">Comments</label>
+                <textarea id="comments" rows="3" class="input"></textarea>
+            </p>
+            <p>
+                <input type="checkbox" id="subscribe" class="checkbox" />
+                <label for="subscribe">Subscribe to newsletter</label>
+            </p>
+            <p>
+                <input type="radio" id="gender-male" name="gender" value="male" class="p-radiobutton p-component" />
+                <label for="gender-male">Male</label>
+            </p>
+            <p>
+                <label for="gender-female">Female</label>
+                <input type="radio" id="gender-female" name="gender" value="female" class="radio" />
+            </p>
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </section>
+    <pre></pre>
+
+
+
+
+    <!-- Lists -->
+    <h2>Lists</h2>
+    <section>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <ol>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+        </ol>
+    </section>
+    <pre></pre>
+
+
+    <!-- Navigation Bar -->
+    <h2>Navigation Bar</h2>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+    <pre></pre>
+
+
+    <h2>Details / Summary</h2>
+    <section>
+        <details>
+            <summary>Expand for details</summary>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, odio! Odio natus ullam ad
+                quaerat, eaque necessitatibus, aliquid distinctio similique voluptatibus dicta consequuntur
+                animi. Quaerat facilis quidem unde eos! Ipsa.</p>
+        </details>
+    </section>
+    <pre></pre>
+
+    <h2>Address</h2>
+    <section>
+        <address>
+            Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
+            Visit us at:<br>
+            Example.com<br>
+            Box 564, Disneyland<br>
+            USA
+        </address>
+    </section>
+    <pre></pre>
+
+    <h2>Horizontal rules</h2>
+    <section>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <hr>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+    </section>
+
+    <!-- Tables -->
+    <section>
+        <h2>Tables</h2>
+        <table class="p-datatable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>28</td>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>24</td>
+                    <td>Female</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <h2>Code</h2>
+    <section id="text__code">
+        <p><strong>Keyboard input:</strong> <kbd>Cmd</kbd></p>
+        <p><strong>Inline code:</strong> <code>&lt;div&gt;code&lt;/div&gt;</code></p>
+        <p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp>
+        </p>
+        <h2>Pre-formatted text</h2>
+        <pre>P R E F O R M A T T E D T E X T
+! " # $ % &amp; ' ( ) * + , - . /
+0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+@ A B C D E F G H I J K L M N O
+P Q R S T U V W X Y Z [ \ ] ^ _
+` a b c d e f g h i j k l m n o
+p q r s t u v w x y z { | } ~ </pre>
+
+
+    </section>
+    <pre></pre>
+
+
+    <!-- More Form-->
+    <h2>Form elements</h2>
+    <section>
+        <form>
+            <fieldset>
+                <legend>Input fields</legend>
+                <p>
+                    <label for="input__text">Text Input</label>
+                    <input id="input__text" type="text" placeholder="Text Input">
+                </p>
+                <p>
+                    <label for="input__password">Password</label>
+                    <input id="input__password" type="password" placeholder="Type your Password">
+                </p>
+                <p>
+                    <label for="input__webaddress">Web Address</label>
+                    <input id="input__webaddress" type="url" placeholder="https://yoursite.com">
+                </p>
+                <p>
+                    <label for="input__emailaddress">Email Address</label>
+                    <input id="input__emailaddress" type="email" placeholder="name@email.com">
+                </p>
+                <p>
+                    <label for="input__phone">Phone Number</label>
+                    <input id="input__phone" type="tel" placeholder="(999) 999-9999">
+                </p>
+                <p>
+                    <label for="input__search">Search</label>
+                    <input id="input__search" type="search" placeholder="Enter Search Term">
+                </p>
+                <p>
+                    <label for="input__text2">Number Input</label>
+                    <input id="input__text2" type="number" placeholder="Enter a Number">
+                </p>
+                <p>
+                    <label for="input__file">File Input</label>
+                    <input id="input__file" type="file">
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Select menus</legend>
+                <p>
+                    <label for="select">Select</label>
+                    <select id="select">
+                        <optgroup label="Option Group">
+                            <option>Option One</option>
+                            <option>Option Two</option>
+                            <option>Option Three</option>
+                        </optgroup>
+                    </select>
+                </p>
+                <p>
+                    <label for="select_multiple">Select (multiple)</label>
+                    <select id="select_multiple" multiple="multiple">
+                        <optgroup label="Option Group">
+                            <option>Option One</option>
+                            <option>Option Two</option>
+                            <option>Option Three</option>
+                        </optgroup>
+                    </select>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Checkboxes</legend>
+                <p>Nested <code>label > input</code></p>
+                <ul>
+                    <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
+                            Choice A</label></li>
+                    <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice
+                            B</label></li>
+                    <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice
+                            C</label></li>
+                </ul>
+                <p>Sibling <code>input + label</code></p>
+                <ul>
+                    <li>
+                        <input id="checkbox4" name="checkbox" type="checkbox" checked="checked">
+                        <label for="checkbox4">Choice A</label>
+                    </li>
+                    <li>
+                        <input id="checkbox5" name="checkbox" type="checkbox">
+                        <label for="checkbox5">Choice B</label>
+                    </li>
+                    <li>
+                        <input id="checkbox6" name="checkbox" type="checkbox">
+                        <label for="checkbox6">Choice C</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend>Radio buttons</legend>
+                <p>Nested <code>label > input</code></p>
+                <ul>
+                    <li><label for="radio1"><input id="radio1" name="radio" type="radio" checked="checked">
+                            Option 1</label></li>
+                    <li><label for="radio2"><input id="radio2" name="radio" type="radio"> Option 2</label></li>
+                    <li><label for="radio3"><input id="radio3" name="radio" type="radio"> Option 3</label></li>
+                </ul>
+                <p>Sibling <code>input + label</code></p>
+                <ul>
+                    <li>
+                        <input id="radio4" name="radio" type="radio" checked="checked">
+                        <label for="radio4">Option 1</label>
+                    </li>
+                    <li>
+                        <input id="radio5" name="radio" type="radio">
+                        <label for="radio5">Option 2</label>
+                    </li>
+                    <li>
+                        <input id="radio6" name="radio" type="radio">
+                        <label for="radio6">Option 3</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <fieldset>
+                <legend>Textareas</legend>
+                <p>
+                    <label for="textarea">Textarea</label>
+                    <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>HTML5 inputs</legend>
+                <p>
+                    <label for="ic">Color input</label>
+                    <input type="color" id="ic" value="#000000">
+                </p>
+                <p>
+                    <label for="in">Number input</label>
+                    <input type="number" id="in" min="0" max="10" value="5">
+                </p>
+                <p>
+                    <label for="ir">Range input</label>
+                    <input type="range" id="ir" value="10">
+                </p>
+                <p>
+                    <label for="idd">Date input</label>
+                    <input type="date" id="idd" value="1970-01-01">
+                </p>
+                <p>
+                    <label for="idm">Month input</label>
+                    <input type="month" id="idm" value="1970-01">
+                </p>
+                <p>
+                    <label for="idw">Week input</label>
+                    <input type="week" id="idw" value="1970-W01">
+                </p>
+                <p>
+                    <label for="idt">Datetime input</label>
+                    <input type="datetime" id="idt" value="1970-01-01T00:00:00Z">
+                </p>
+                <p>
+                    <label for="idtl">Datetime-local input</label>
+                    <input type="datetime-local" id="idtl" value="1970-01-01T00:00">
+                </p>
+                <p>
+                    <label for="idl">Datalist</label>
+                    <input type="text" id="idl" list="example-list">
+                    <datalist id="example-list">
+                        <option value="Example #1" />
+                        <option value="Example #2" />
+                        <option value="Example #3" />
+                    </datalist>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Action buttons</legend>
+                <p>
+                    <input type="submit" value="<input type=submit>">
+                    <input type="button" value="<input type=button>">
+                    <input type="reset" value="<input type=reset>">
+                    <input type="submit" value="<input disabled>" disabled>
+                </p>
+                <p>
+                    <button type="submit">&lt;button type=submit&gt;</button>
+                    <button type="button">&lt;button type=button&gt;</button>
+                    <button type="reset">&lt;button type=reset&gt;</button>
+                    <button type="button" disabled>&lt;button disabled&gt;</button>
+                </p>
+
+            </fieldset>
+
+        </form>
+    </section>
+
+
+    <h2>Blockquotes</h2>
+    <section>
+
+        <blockquote>
+            <p>A block quotation (also known as a long quotation or extract) is a quotation in a written
+                document, that is set off from the main text as a paragraph, or block of text.</p>
+            <p>It is typically distinguished visually using indentation and a different typeface or
+                smaller size quotation. It may or may not include a citation, usually placed at the
+                bottom.</p>
+            <cite><a href="#!">Said no one, ever.</a></cite>
+        </blockquote>
+    </section>
+    <pre></pre>
+
+    <h2>Dialog</h2>
+    <section>
+        <button onclick="document.getElementById('dialog-demo').showModal()">Open</button>
+        <dialog id="dialog-demo">
+            <h2>Dialog</h2>
+            <p>Dialogs are a new HTML5 element that can be used to create modal dialogs or pop-up windows.</p>
+            <form method="dialog">
+                <button>Close</button>
+            </form>
+        </dialog>
+    </section>
+    <pre></pre>
+
+
+    <h2>Image</h2>
+    <section>
+        <img src="https://placehold.co/300x300/EEE/31343C" style="width:300px; height: 300px;" />
+    </section>
+    <pre></pre>
+
+
+    <h2>Meter & Progress</h2>
+    <section class="flex flex-column">
+        <meter value="2" min="0" max="10">2 out of 10</meter>
+
+        <label for="progress-bar">No attributes (indeterminate)</label>
+        <progress id="progress-bar">progress</progress>
+        <label for="progress-30">30%, max 100%</label>
+        <progress id="progress-30" max="100" value="30">30%</progress>
+    </section>
+
+    <h3>PrimeIcons</h3>
+    <section class="card">
+        <div class="grid text-center">
+            <div class="col-12 md:col-2 mb-5">
+                <i class="mb-3 pi pi-folder-plus text-2xl text-color-secondary"></i>
+                <div>pi-folder-plus</div>
+            </div>
+            <div class="col-12 md:col-2 mb-5"><i class="mb-3 pi pi-receipt text-2xl text-color-secondary"></i>
+                <div>pi-receipt</div>
+            </div>
+            <div class="col-12 md:col-2 mb-5"><i class="mb-3 pi pi-asterisk text-2xl text-color-secondary"></i>
+                <div>pi-asterisk</div>
+            </div>
+            <div class="col-12 md:col-2 mb-5"><i class="mb-3 pi pi-face-smile text-2xl text-color-secondary"></i>
+                <div>pi-face-smile</div>
+            </div>
+            <div class="col-12 md:col-2 mb-5"><i class="mb-3 pi pi-pinterest text-2xl text-color-secondary"></i>
+                <div>pi-pinterest</div>
+            </div>
+
+        </div>
+    </section>
+    
+
+    <script>
+        // 
+        document.querySelectorAll('section').forEach(node => {
+            const HTML = node.innerHTML;
+            if (node.nextElementSibling && node.nextElementSibling.nodeName == 'PRE') {
+                node.nextElementSibling.textContent = HTML.trim().replace(/ {4}/g, ' ');
+            }
+        })
+    </script>
+</body>
+
+</html>
