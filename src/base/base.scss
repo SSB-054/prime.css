@@ -172,7 +172,6 @@
     /* Default (light) theme */
     --text: var(--text-color);
     --code: var(--pink-500);
-    --preformatted: var(--gray-600);
     --marked: var(--yellow-500);
     --disabled: var(--gray-200);
 }
@@ -182,7 +181,6 @@
 
     :root {
         --code: var(--pink-600);
-        --preformatted: var(--gray-500);
         --disabled: var(--gray-200);
 
     }
@@ -271,7 +269,7 @@ nav {
     }
 
     a:hover {
-        background-color: var(--surface-hover);
+        background-color: var(--surface-100);
         cursor: pointer;
     }
 
@@ -299,11 +297,11 @@ nav:has(> a) {
 
 
 dialog {
-    border: solid 1px var(--surface-border);
+    border: 1px solid  var(--surface-border);
     border-radius: var(--border-radius);
 
-    h2 {
-        margin: 0 0 0 0;
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
     }
 }
 
@@ -347,6 +345,19 @@ h6 {
     margin-top: calc(var(--line-height) * 1.5rem);
 }
 
+a {
+    margin: 0.1rem;
+
+    &.clean {
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+        filter: grayscale(80%);
+    }
+}
+
 /* Format links & buttons */
 a:not([role="button"]),
 a:not([role="button"]):visited {
@@ -357,9 +368,7 @@ a[role="button"] {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: none;
-}
+
 
 a button,
 button,
@@ -377,6 +386,18 @@ input[type="button"] {
     transition: 0.4s;
 }
 
+input[type="file"] {
+    border: 1px solid var(--surface-200);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background: var(--surface-50);
+    color: var(--surface-700);
+    padding: 0.7rem 0.9rem;
+    margin: 0.5rem 0;
+    transition: 0.4s;
+}
+
+
 a button[disabled],
 button[disabled],
 [role="button"][aria-disabled="true"],
@@ -391,6 +412,7 @@ select[disabled] {
     cursor: not-allowed;
     background: var(--primary-color);
     color: var(--primary-color-text);
+    pointer-events: none;
 
 }
 
@@ -599,10 +621,6 @@ input[type="radio"] {
     width: auto;
 }
 
-/* do not show border around file selector button */
-input[type="file"] {
-    border: 0;
-}
 
 /* Without this any HTML using <fieldset> shows ugly borders and has additional padding/margin. (Issue #3) */
 fieldset {
@@ -669,9 +687,9 @@ samp {
 }
 
 kbd {
-    color: var(--preformatted);
-    border: 1px solid var(--preformatted);
-    border-bottom: 3px solid var(--preformatted);
+    color: var(--text-color-secondary);
+    border: 1px solid var(--text-color-secondary);
+    border-bottom: 3px solid var(--text-color-secondary);
     border-radius: var(--border-radius);
     padding: 0.1rem;
 }
@@ -681,7 +699,7 @@ pre {
     max-width: 100%;
     overflow: auto;
     overflow-x: auto;
-    color: var(--preformatted);
+    color: var(--text-color-secondary);
     background: var(--surface-ground);
     border: 1px solid var(--surface-border);
     border-radius: var(--border-radius);
@@ -689,116 +707,117 @@ pre {
 
 /* Fix embedded code within pre */
 pre code {
-    color: var(--preformatted);
+    color: var(--text-color-secondary);
     background: none;
     margin: 0;
     padding: 0;
 }
 
-.primary {
-    &.alert {
-        padding: 0.55rem;
-        border: 1px solid var(--surface-border);
-        margin: 0.45rem;
-        border-radius: var(--border-radius);
-        cursor: pointer;
+a,
+button,
+div {
+
+    &.primary {
+        &.alert {
+            padding: 0.55rem;
+            border: 1px solid var(--surface-border);
+            margin: 0.45rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+
+        }
 
     }
 
-}
+    &.secondary {
+        background: var(--surface-100);
+        color: var(--surface-700);
 
-.secondary {
-    background: var(--gray-50);
-    color: var(--gray-700);
+        &.outlined {
+            border: 1px solid var(--surface-200);
+        }
 
-    &.outlined {
-        border: 1px solid var(--gray-200);
+        &.alert {
+            padding: 0.55rem;
+            border: 1px solid var(--surface-200);
+            margin: 0.45rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+
+        }
     }
 
-    &.alert {
-        padding: 0.55rem;
-        border: 1px solid var(--gray-200);
-        margin: 0.45rem;
-        border-radius: var(--border-radius);
-        cursor: pointer;
+    &.danger {
+        background: var(--red-50);
+        color: var(--red-700);
 
-    }
-}
+        &.outlined {
+            border: 1px solid var(--red-200);
+        }
 
-.danger {
-    background: var(--red-50);
-    color: var(--red-700);
+        &.alert {
+            padding: 0.55rem;
+            border: 1px solid var(--red-200);
+            margin: 0.45rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
 
-    &.outlined {
-        border: 1px solid var(--red-200);
-    }
-
-    &.alert {
-        padding: 0.55rem;
-        border: 1px solid var(--red-200);
-        margin: 0.45rem;
-        border-radius: var(--border-radius);
-        cursor: pointer;
-
-    }
-}
-
-.warning {
-    background: var(--yellow-50);
-    color: var(--yellow-700);
-
-    &.outlined {
-        border: 1px solid var(--yellow-200);
+        }
     }
 
-    &.alert {
-        padding: 0.55rem;
-        border: 1px solid var(--yellow-200);
-        margin: 0.45rem;
-        border-radius: var(--border-radius);
-        cursor: pointer;
+    &.warning {
+        background: var(--yellow-50);
+        color: var(--yellow-700);
 
-    }
-}
+        &.outlined {
+            border: 1px solid var(--yellow-200);
+        }
 
-.success {
-    background: var(--green-50);
-    color: var(--green-700);
+        &.alert {
+            padding: 0.55rem;
+            border: 1px solid var(--yellow-200);
+            margin: 0.45rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
 
-    &.outlined {
-        border: 1px solid var(--green-200);
-    }
-
-    &.alert {
-        padding: 0.55rem;
-        border: 1px solid var(--green-200);
-        margin: 0.45rem;
-        border-radius: var(--border-radius);
-        cursor: pointer;
-
-    }
-}
-
-.info {
-    background: var(--blue-50);
-    color: var(--blue-700);
-
-    &.outlined {
-        border: 1px solid var(--blue-200);
+        }
     }
 
-    &.alert {
-        padding: 0.55rem;
-        border: 1px solid var(--blue-200);
-        margin: 0.45rem;
-        border-radius: var(--border-radius);
-        cursor: pointer;
+    &.success {
+        background: var(--green-50);
+        color: var(--green-700);
 
+        &.outlined {
+            border: 1px solid var(--green-200);
+        }
+
+        &.alert {
+            padding: 0.55rem;
+            border: 1px solid var(--green-200);
+            margin: 0.45rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+
+        }
     }
-}
 
-button {
+    &.info {
+        background: var(--blue-50);
+        color: var(--blue-700);
 
+        &.outlined {
+            border: 1px solid var(--blue-200);
+        }
+
+        &.alert {
+            padding: 0.55rem;
+            border: 1px solid var(--blue-200);
+            margin: 0.45rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+
+        }
+    }
 
     &.small {
         font-size: 0.65rem;
@@ -820,9 +839,12 @@ form p:not(:has(input[type="radio"]), :has(input[type="checkbox"])) {
 }
 
 form {
-    .helptext {
+
+    .helptext,
+    small {
+        margin-top: -4px;
         font-size: 0.85rem;
-        color: var(--text-color);
+        color: var(--text-color-secondary);
     }
 
     .errorlist {
@@ -854,9 +876,9 @@ label:has(+ input[required])::after {
 
 .card {
     padding: 1.15rem;
-    background: white;
-    border-radius: 8px;
-    margin: 16px;
+    background: var(--surface-card);
+    border-radius: var(--border-radius);
+    margin: 1rem;
     border: 1px solid var(--surface-border);
 
     h2,
@@ -900,38 +922,114 @@ label:has(+ input[required])::after {
 }
 
 .tabs {
-    input[type="radio"] {
-        display: none;
+    .labels {
+        display: flex;
+        margin-bottom: -2px;
+
+        div {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--surface-ground);
+            cursor: pointer;
+            border: 1px solid var(--surface-border);
+            margin-right: -1px;
+
+            &.active {
+                background-color: var(--surface-section);
+                border-bottom: 1px solid var(--surface-section);
+                z-index: 1;
+                position: relative;
+                display: block;
+            }
+        }
     }
 
 
-    label {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #f1f1f1;
-        cursor: pointer;
-        border: 1px solid #ddd;
-        margin-right: -1px;
-        margin-bottom: -1px;
-    }
-
-    input[type="radio"]:checked+label+.container {
-        background-color: white;
-        border-bottom: 1px solid white;
-        z-index: 1;
-        position: relative;
-        display: block;
-
-    }
-
-    
     .container {
-        order: 999; 
-        border: 1px solid #ddd !important;
+
+        border: 1px solid var(--surface-border) !important;
         padding: 20px;
         display: none;
+        background-color: var(--surface-section);
+
+        &.active {
+            display: block;
+
+        }
     }
 
+}
+
+hgroup {
+    margin-bottom: 1rem;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0.25rem;
+    }
+
+    p {
+        margin: 0.15rem;
+        color: var(--surface-600);
+        font-size: medium;
+    }
+}
+
+.smooth-hide {
+    opacity: 0 !important;
+    max-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.blink {
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        filter: brightness(0.95)
+    }
+
+    50% {
+        filter: brightness(1.03)
+    }
+}
+
+:root {
+    --icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(76, 155, 138)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    --icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(200, 79, 72)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+
+}
+
+:where(input, select, textarea):not([type="checkbox"], [type="radio"], [type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"], [type="range"])[aria-invalid="false"]:not(select) {
+    background-image: var(--icon-valid);
+    background-position: center right .75rem;
+    background-size: 1rem auto;
+    background-repeat: no-repeat;
+}
+:where(input, select, textarea):not([type="checkbox"], [type="radio"], [type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"], [type="range"])[aria-invalid="true"]:not(select) {
+    background-image: var(--icon-invalid);
+    background-position: center right .75rem;
+    background-size: 1rem auto;
+    background-repeat: no-repeat;
+}
+
+[role=group],
+[role=search] {
+  display:inline-flex;
+  position:relative;
+  width:100%;
+  border-radius:var(--border-radius);
+  vertical-align:middle;
 }
 
 @import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap";

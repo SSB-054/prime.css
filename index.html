@@ -7,6 +7,7 @@
     <title>Prime.css</title>
     <link rel="stylesheet" href="src/base/base.scss">
     <link rel="stylesheet" href="src/theme/theme.scss">
+    <script src="src/base/base.js"></script>
 
 </head>
 
@@ -44,20 +45,34 @@
 
 
     <!-- Headings -->
-    <h2>Typography</h2>
+    <h2 class="mb-0">Typography</h2>
     <section>
-        <h1>Heading 1 - Main Title</h1>
-        <h2>Heading 2 - Section Title</h2>
-        <h3>Heading 3 - Subsection Title</h3>
-        <h4>Heading 4 - Small Section</h4>
-        <h5>Heading 5 - Minor Title</h5>
-        <h6>Heading 6 - Small Title</h6>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
     </section>
     <pre></pre>
 
+    <h3>Group Heading</h3>
+    <section>
+        <hgroup>
+            <h2>Get inspired with CSS</h2>
+            <p>How to use CSS to add glam to your Website?</p>
+        </hgroup>
+    </section>
+    <pre></pre>
 
-
-
+    <h3>Links</h3>
+    <section>
+        <a href="#"> One</a>
+        <a href="#" class="clean"> Two</a>
+        <a href="#" role="button"> Three</a>
+        <a href="#" role="button" aria-disabled="true"> Four</a>
+    </section>
+    <pre></pre>
 
     <h3>Text Styles</h3>
     <section>
@@ -76,16 +91,13 @@
         <blockquote>
             <p>A block quotation (also known as a long quotation or extract) is a quotation in a written
                 document, that is set off from the main text as a paragraph, or block of text.</p>
-            <p>It is typically distinguished visually using indentation and a different typeface or
-                smaller size quotation. It may or may not include a citation, usually placed at the
-                bottom.</p>
             <cite><a href="#!">Said no one, ever.</a></cite>
         </blockquote>
     </section>
     <pre></pre>
 
     <h3>Buttons</h3>
-    <section class="flex gap-2">
+    <section>
         <button class="primary">Primary</button>
         <button class="secondary">Secondary</button>
         <button class="success">Success</button>
@@ -96,15 +108,17 @@
     </section>
     <pre></pre>
 
-    <section class="flex gap-2 mt-2">
-        <button class="primary outlined">Primary Outlined</button>
-        <button class="secondary outlined">Secondary Outlined</button>
-        <button class="success outlined">Success Outlined</button>
-        <button class="danger outlined">Danger Outlined</button>
+    <section>
+        <button class="primary outlined">Primary</button>
+        <button class="secondary outlined">Secondary</button>
+        <button class="success outlined">Success</button>
+        <button class="danger outlined">Danger</button>
+        <button class="warning outlined">Warning</button>
+        <button class="info outlined">Info</button>
     </section>
     <pre></pre>
 
-    <section class="flex gap-2 mt-2">
+    <section>
         <button class="small">Small</button>
         <button>Regular</button>
         <button class="large">Large</button>
@@ -139,12 +153,21 @@
         <div class="alert success">
             <strong>Success!</strong> Operation completed successfully.
         </div>
-        <div class="alert warning">
+        <!-- hide  anything in 10 seconds -->
+        <div class="alert warning" control-hide="5">
             <strong>Warning!</strong> Please proceed with caution.
         </div>
-        <div class="alert danger">
+        <!-- Blink Anything -->
+        <div class="alert danger blink">
             <strong>Error!</strong> Something went wrong.
         </div>
+    </section>
+    <pre></pre>
+
+    <h3>Validation states</h3>
+    <section>
+        <input type="text" name="valid" placeholder="Valid" aria-invalid="false" value="Valid" >
+        <input type="text" name="invalid" placeholder="Invalid" aria-invalid="true" value="Invalid" >
     </section>
     <pre></pre>
 
@@ -176,11 +199,13 @@
             <p>
                 <label for="text-input">Text Input</label>
                 <input type="text" id="text-input" placeholder="Enter text" required>
+                <small>This is help text.</small>
             </p>
 
             <p>
                 <label for="textarea">Textarea</label>
                 <textarea id="textarea" rows="3" placeholder="Enter long text"></textarea>
+                <small>This is help text.</small>
             </p>
 
             <!-- Select -->
@@ -223,10 +248,10 @@
                 <input type="range" id="range" min="0" max="100" value="50">
             </p>
 
-            <input type="submit" value="<input type=submit>">
-            <input type="button" value="<input type=button>">
-            <input type="reset" value="<input type=reset>">
-            <input type="submit" value="<input disabled>" disabled>
+            <input type="submit" value="type=submit">
+            <input type="button" value="type=button">
+            <input type="reset" value="type=reset">
+            <input type="submit" value="input disabled" disabled>
         </form>
     </section>
     <pre></pre>
@@ -261,32 +286,7 @@
     </section>
     <pre></pre>
 
-    <h2>Tabs</h2>
-    <section>
-        <div class="tabs">
-            <input type="radio" name="tabs" id="tab1" checked>
-            <label for="tab1">Tab 1</label>
-            <div class="container">
-                <h2>Content 1</h2>
-                <p>This is the content for tab 1.</p>
-            </div>
 
-            <input type="radio" name="tabs" id="tab2">
-            <label for="tab2">Tab 2</label>
-            <div class="container">
-                <h2>Content 2</h2>
-                <p>This is the content for tab 2.</p>
-            </div>
-
-            <input type="radio" name="tabs" id="tab3">
-            <label for="tab3">Tab 3</label>
-            <div class="container">
-                <h2>Content 3</h2>
-                <p>This is the content for tab 3.</p>
-            </div>
-        </div>
-    </section>
-    <pre></pre>
 
     <h3>Unordered List</h3>
     <section>
@@ -347,30 +347,6 @@
                 </tr>
             </tbody>
         </table>
-    </section>
-
-    <h2>Utility Classes</h2>
-    <h3>Spacing</h3>
-    <section>
-        <div class="flex gap-2">
-            <div class="p-2 bg-gray-200">p-2</div>
-            <div class="p-4 bg-gray-200">p-4</div>
-            <div class="p-6 bg-gray-200">p-6</div>
-        </div>
-    </section>
-
-    <h3>Flexbox</h3>
-    <section>
-        <div class="flex gap-2 mb-2">
-            <div class="p-2 bg-gray-200">Flex 1</div>
-            <div class="p-2 bg-gray-200">Flex 2</div>
-            <div class="p-2 bg-gray-200">Flex 3</div>
-        </div>
-        <div class="flex flex-col gap-2">
-            <div class="p-2 bg-gray-200">Column 1</div>
-            <div class="p-2 bg-gray-200">Column 2</div>
-        </div>
-
     </section>
 
 
@@ -533,8 +509,10 @@
                 <legend>Radio buttons</legend>
                 <p>Nested <code>label > input</code></p>
                 <ul>
-                    <li><label for="radio1"><input id="radio1" name="radio" type="radio" checked="checked">
-                            Option 1</label></li>
+                    <li>
+                        <label for="radio1"><input id="radio1" name="radio" type="radio" checked="checked">
+                            Option 1</label>
+                    </li>
                     <li><label for="radio2"><input id="radio2" name="radio" type="radio"> Option 2</label></li>
                     <li><label for="radio3"><input id="radio3" name="radio" type="radio"> Option 3</label></li>
                 </ul>
@@ -563,6 +541,11 @@
                 </p>
             </fieldset>
 
+            <fieldset role="group">
+                <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
+                <input type="submit" value="Subscribe" />
+              </fieldset>
+              
             <fieldset>
                 <legend>HTML5 inputs</legend>
                 <p>
@@ -616,7 +599,7 @@
 
     <h2>Dialog</h2>
     <section>
-        <button onclick="document.getElementById('dialog-demo').showModal()">Open</button>
+        <button toggle-modal="#dialog-demo">Open</button>
         <dialog id="dialog-demo">
             <h2>Dialog</h2>
             <p>Dialogs are a new HTML5 element that can be used to create modal dialogs or pop-up windows.</p>
@@ -634,17 +617,42 @@
     </section>
     <pre></pre>
 
+
+    <h2>Tabs</h2>
+    <section>
+        <div class="tabs">
+            <div class="labels">
+                <div class="active" tab="#tab-1">Tab 1</div>
+                <div tab="#tab-2">Tab 2</div>
+                <div tab="#tab-3">Tab 3</div>
+            </div>
+            <div id="tab-1" class="container active">
+                <h2>Content 1</h2>
+                <p>This is the content for tab 1.</p>
+            </div>
+            <div id="tab-2" class="container">
+                <h2>Content 2</h2>
+                <p>This is the content for tab 2.</p>
+            </div>
+            <div id="tab-3" class="container">
+                <h2>Content 3</h2>
+                <p>This is the content for tab 3.</p>
+            </div>
+        </div>
+    </section>
+    <pre></pre>
+
     <footer class="p-4 text-center">
         <p>Prime.css - A minimalistic CSS library</p>
     </footer>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-html.min.js"></script>
     <script>
-        // 
         document.querySelectorAll('section').forEach(node => {
-            const HTML = node.innerHTML.split('\n');
             if (node.nextElementSibling && node.nextElementSibling.nodeName == 'PRE') {
-                node.nextElementSibling.textContent = HTML.map(e => e.trim()).filter(e => e).join('\n');
+                const innerHTML = html_beautify(node.innerHTML, { indent_size: 2 })
+                node.nextElementSibling.textContent = innerHTML;
             }
         })
     </script>

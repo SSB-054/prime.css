@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        base: resolve(__dirname, 'src/base/base.scss'),
+        base: resolve(__dirname, 'src/base/base.js'),
         theme: resolve(__dirname, 'src/theme/theme.scss'),
       },
       output: {
