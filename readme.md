@@ -20,5 +20,17 @@ The goal is to provide an easy way for developers to get started with web develo
 - **Django Friendly**: Perfect for developers using Django as their backend framework, since it's designed with that in mind.
 - **Future Proof**: The project is open to adding more libraries and improvements, and contributions are welcome.
 
+## Using the Library via CDN
+
+You can easily include our CSS library in your project using the following CDN link:
+
+```html
+<!-- BASE -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.1/dist/base/bundle.min.css">
+<script src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.1/dist/base/bundle.min.js"></script>
+
+<!-- PRIMEFLEX.CSS WITH THEMES -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.1/dist/theme/bundle.min.css">
+```
 
 
