@@ -31,6 +31,9 @@ You can easily include our CSS library in your project using the following CDN l
 
 <!-- PRIMEFLEX.CSS WITH THEMES -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.1/dist/theme/bundle.min.css">
+
+<!-- https://iconoir.com/-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css/assets/iconoir.css">
 ```
 
 
