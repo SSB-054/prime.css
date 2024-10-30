@@ -40,6 +40,22 @@ window.refreshUI = () => {
             element.classList.add('smooth-hide');
           }, hideTime * 1000);
     })
+
+    // image preview
+    bSelector('img[preview-src]', 'zoomin-control-binding', (element) => {
+        element.addEventListener('click', ()=>{
+            const previewSrc = element.getAttribute('preview-src');
+            if(previewSrc){
+                const tmpElement = document.createElement('div')
+                tmpElement.classList.add('zoom-in-box-preview-modal')
+                tmpElement.innerHTML = `<img src="${previewSrc}" alt="${element.getAttribute('alt', 'Unable to load')}">`
+                tmpElement.addEventListener('click', ()=>{
+                    tmpElement.remove()
+                })
+                document.body.appendChild(tmpElement);
+            }
+        })
+    })
 }
 document.addEventListener('DOMContentLoaded', () => {
     window.refreshUI();

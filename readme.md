@@ -27,7 +27,7 @@ You can easily include our CSS library in your project using the following CDN l
 ```html
 <!-- BASE -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.1/dist/base/bundle.min.css">
-<script src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.1/dist/base/bundle.min.js"></script>
+<script  type="module" src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.1/dist/base/bundle.min.js"></script>
 
 <!-- PRIMEFLEX.CSS WITH THEMES -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.1/dist/theme/bundle.min.css">

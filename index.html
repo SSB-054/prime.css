@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="src/base/base.scss">
     <link rel="stylesheet" href="src/theme/theme.scss">
     <link rel="stylesheet" href="assets/iconoir.css">
-    <script src="src/base/base.js"></script>
+    <script src="src/base/base.js" type="module"></script>
 
 </head>
 
@@ -262,8 +262,8 @@
     <h2>Navbar 1 </h2>
     <section>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
+            <a href="#" class="primary">Home</a>
+            <a href="#" class="active">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
         </nav>
@@ -614,7 +614,7 @@
 
     <h2>Image</h2>
     <section>
-        <img src="https://placehold.co/300x300/EEE/31343C" style="width:300px; height: 300px;" />
+        <img src="https://placehold.co/300x300/EEE/31343C" preview-src="https://placehold.co/1024x1024/EEE/31343C" style="width:300px; height: 300px;" />
     </section>
     <pre></pre>
 
@@ -642,12 +642,12 @@
         </div>
     </section>
     <pre></pre>
-
+    
     <footer class="p-4 text-center">
         <p>Prime.css - A minimalistic CSS library</p>
     </footer>
 
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-html.min.js"></script>
     <script>
         document.querySelectorAll('section').forEach(node => {
