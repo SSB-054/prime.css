@@ -5,23 +5,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prime.css</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@0.0.1/dist/base/bundle.min.css"> 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@0.0.1/dist/theme/bundle.min.css"> 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@0.0.1/assets/iconoir.css"> 
-<script  type="module" src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@0.0.1/dist/base/bundle.min.js"></script> 
+    <link rel="stylesheet" href="src/base/base.scss">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@0.0.2/dist/base/bundle.min.css"> 
+    <link rel="stylesheet" href="src/theme/theme.scss">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@0.0.2/dist/theme/bundle.min.css"> 
+    <link rel="stylesheet" href="assets/iconoir.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@0.0.2/assets/iconoir.css"> 
+    <script src="src/base/base.js" type="module"></script>
+<script  type="module" src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@0.0.2/dist/base/bundle.min.js"></script> 
 
 </head>
+<!--
+    Additional Components:
+-------------------------------------
+    Modal/Dialog component
+    Toast notifications
+    Accordion/Collapsible sections
+    Pagination
+    Form components (input groups, switches, file uploads)
+    Progress bars
+    Tables with sorting/filtering capabilities
+-->
 
 <body>
 
     <header class="p-4 flex flex-column">
-        <h1>Prime.css</h1>
+        <h1>Prime.css  </h1>
         <p>A minimalistic CSS/JS library that works directly with HTML elements</p>
-        <p>All basic tools you need to start building responsive page without the overhead of unnecessary dependencies.</p>
+        <p>All basic tools you need to start building responsive page without the overhead of unnecessary dependencies.
+        </p>
         <b>Maintainer : Suraj</b>
+        <a href="https://primeflex.org/display" target="_blank" class="href">Built Over PrimeFlex CSS</a>
     </header>
 
-    <h2>Change Themes</h2>
+    <!-- <h2>Change Themes</h2>
     <section>
         <div class="flex gap-2 my-4">
             <button class="bg-gray-100 text-gray-800"
@@ -42,11 +59,10 @@
         <div>
             <pre>document.querySelector(&#39;html&#39;).setAttribute(&#39;theme&#39;,&#39;green&#39;);</pre>
         </div>
-    </section>
+    </section> -->
 
 
     <!-- Headings -->
-    <h2 class="mb-0">Typography</h2>
     <section>
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
@@ -57,7 +73,6 @@
     </section>
     <pre></pre>
 
-    <h3>Group Heading</h3>
     <section>
         <hgroup>
             <h2>Get inspired with CSS</h2>
@@ -84,6 +99,7 @@
         <p><small>Small text for footnotes or legal text</small></p>
         <p><kbd>Ctrl</kbd> + <kbd>C</kbd> for keyboard shortcuts</p>
     </section>
+    <pre></pre>
 
 
     <h2>Blockquotes</h2>
@@ -97,6 +113,17 @@
     </section>
     <pre></pre>
 
+
+    <h3>Badge</h3>
+    <section>
+        <span class="badge primary">Primary</span>
+        <span class="badge secondary">Secondary</span>
+        <span class="badge warning">Warning</span>
+        <span class="badge danger outlined">Danger</span>
+        <span class="badge success small">Success</span>
+    </section>
+    <pre></pre>
+
     <h3>Buttons</h3>
     <section>
         <button class="primary">Primary</button>
@@ -106,16 +133,13 @@
         <button class="warning">Warning</button>
         <button class="info">Info</button>
         <button disabled>Disabled</button>
-    </section>
-    <pre></pre>
-
-    <section>
+        <br>
+        <button class="info outlined small">Info</button>
         <button class="primary outlined">Primary</button>
         <button class="secondary outlined">Secondary</button>
         <button class="success outlined">Success</button>
         <button class="danger outlined">Danger</button>
-        <button class="warning outlined">Warning</button>
-        <button class="info outlined">Info</button>
+        <button class="warning outlined large">Warning</button>
     </section>
     <pre></pre>
 
@@ -126,6 +150,68 @@
     </section>
     <pre></pre>
 
+
+    <h3>Breadcrumbs</h3>
+    <section>
+        <div class="breadcrumbs">
+            <span class="breadcrumb-item"><a href="#">Home</a></span>
+            <span class="breadcrumb-item info"><a href="#">Library</a></span>
+            <span class="breadcrumb-item">Current Page</span>
+        </div>
+
+    </section>
+    <pre></pre>
+
+
+    <h2>Navbar 1 </h2>
+    <section>
+        <nav>
+            <a href="#" class="primary">Home</a>
+            <a href="#" class="active">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </section>
+    <pre></pre>
+
+    <h2>Navbar 2 </h2>
+    <section>
+        <nav>
+            <div>
+                <a href="#" class="brand">Brand</a>
+            </div>
+            <div>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+
+            </div>
+        </nav>
+    </section>
+    <pre></pre>
+
+
+
+    <h3>Unordered List</h3>
+    <section>
+        <ul>
+            <li>List item one</li>
+            <li>List item two</li>
+            <li>List item three</li>
+        </ul>
+    </section>
+    <pre></pre>
+
+    <h3>Ordered List</h3>
+    <section>
+        <ol>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ol>
+    </section>
+    <pre></pre>
 
     <h3>Cards</h3>
     <section>
@@ -167,12 +253,39 @@
 
     <h3>Validation states</h3>
     <section>
-        <input type="text" name="valid" placeholder="Valid" aria-invalid="false" value="Valid" >
-        <input type="text" name="invalid" placeholder="Invalid" aria-invalid="true" value="Invalid" >
+        <input type="text" name="valid" aria-invalid="false" value="Valid">
+        <input type="text" name="invalid" aria-invalid="true" value="Invalid">
     </section>
     <pre></pre>
 
-
+    <h3>Social Media Buttons</h3>
+    <section class="flex gap-2">
+        <a role="button" class="facebook">
+            <i class="text-6xl iconoir-facebook"></i>
+        </a>
+        <a role="button" class="twitter">
+            <i class="text-6xl iconoir-x"></i>
+        </a>
+        <a role="button" class="instagram">
+            <i class="text-6xl iconoir-instagram"></i>
+        </a>
+        <a role="button" class="linkedin">
+            <i class="text-6xl iconoir-linkedin"></i>
+        </a>
+        <a role="button" class="youtube">
+            <i class="text-6xl iconoir-youtube"></i>
+        </a>
+        <a role="button" class="pinterest">
+            <i class="text-6xl iconoir-pinterest"></i>
+        </a>
+        <a role="button" class="tiktok">
+            <i class="text-6xl iconoir-tiktok"></i>
+        </a>
+        <a role="button" class="discord">
+            <i class="text-6xl iconoir-discord"></i>
+        </a>
+    </section>
+    <pre></pre>
     <h3>Progress Indicators</h3>
     <section>
         <div>
@@ -190,6 +303,70 @@
 
     </section>
     <pre></pre>
+
+    <!-- Tables -->
+    <h2>Tables</h2>
+    <section id="tables">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cell 1</td>
+                    <td>Cell 2</td>
+                    <td>Cell 3</td>
+                </tr>
+                <tr>
+                    <td>Cell 4</td>
+                    <td>Cell 5</td>
+                    <td>Cell 6</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <h2>Details / Summary</h2>
+    <section>
+        <details>
+            <summary>Expand for details</summary>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, odio! Odio natus ullam ad
+                quaerat, eaque necessitatibus, aliquid distinctio similique voluptatibus dicta consequuntur
+                animi. Quaerat facilis quidem unde eos! Ipsa.</p>
+        </details>
+    </section>
+    <pre></pre>
+
+    <h2>Address</h2>
+    <section>
+        <address>
+            Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
+            Visit us at:<br>
+            Example.com<br>
+            Box 564, Disneyland<br>
+            USA
+        </address>
+    </section>
+    <pre></pre>
+
+    <h2>Horizontal rules</h2>
+    <section>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <hr>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+    </section>
 
     <!-- Forms -->
     <h2>Forms</h2>
@@ -259,55 +436,6 @@
 
 
 
-    <h2>Navbar 1 </h2>
-    <section>
-        <nav>
-            <a href="#" class="primary">Home</a>
-            <a href="#" class="active">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-        </nav>
-    </section>
-    <pre></pre>
-
-    <h2>Navbar 2 </h2>
-    <section>
-        <nav>
-            <div>
-                <a href="#">Brand</a>
-            </div>
-            <div>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-
-            </div>
-        </nav>
-    </section>
-    <pre></pre>
-
-
-
-    <h3>Unordered List</h3>
-    <section>
-        <ul>
-            <li>List item one</li>
-            <li>List item two</li>
-            <li>List item three</li>
-        </ul>
-    </section>
-    <pre></pre>
-
-    <h3>Ordered List</h3>
-    <section>
-        <ol>
-            <li>First item</li>
-            <li>Second item</li>
-            <li>Third item</li>
-        </ol>
-    </section>
-    <pre></pre>
 
 
     <h3>Definition List</h3>
@@ -323,69 +451,7 @@
 
 
 
-    <!-- Tables -->
-    <h2>Tables</h2>
-    <section id="tables">
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Header 1</th>
-                    <th>Header 2</th>
-                    <th>Header 3</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Cell 1</td>
-                    <td>Cell 2</td>
-                    <td>Cell 3</td>
-                </tr>
-                <tr>
-                    <td>Cell 4</td>
-                    <td>Cell 5</td>
-                    <td>Cell 6</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-
-    <h2>Details / Summary</h2>
-    <section>
-        <details>
-            <summary>Expand for details</summary>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, odio! Odio natus ullam ad
-                quaerat, eaque necessitatibus, aliquid distinctio similique voluptatibus dicta consequuntur
-                animi. Quaerat facilis quidem unde eos! Ipsa.</p>
-        </details>
-    </section>
-    <pre></pre>
-
-    <h2>Address</h2>
-    <section>
-        <address>
-            Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
-            Visit us at:<br>
-            Example.com<br>
-            Box 564, Disneyland<br>
-            USA
-        </address>
-    </section>
-    <pre></pre>
-
-    <h2>Horizontal rules</h2>
-    <section>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <hr>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-    </section>
+    
 
 
     <h2>Code</h2>
@@ -545,8 +611,8 @@
             <fieldset role="group">
                 <input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
                 <input type="submit" value="Subscribe" />
-              </fieldset>
-              
+            </fieldset>
+
             <fieldset>
                 <legend>HTML5 inputs</legend>
                 <p>
@@ -614,7 +680,8 @@
 
     <h2>Image</h2>
     <section>
-        <img src="https://placehold.co/300x300/EEE/31343C" preview-src="https://placehold.co/1024x1024/EEE/31343C" style="width:300px; height: 300px;" />
+        <img src="https://placehold.co/300x300/EEE/31343C" preview-src="https://placehold.co/1024x1024/EEE/31343C"
+            style="width:300px; height: 300px;" />
     </section>
     <pre></pre>
 
@@ -642,12 +709,12 @@
         </div>
     </section>
     <pre></pre>
-    
+
     <footer class="p-4 text-center">
         <p>Prime.css - A minimalistic CSS library</p>
     </footer>
 
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-html.min.js"></script>
     <script>
         document.querySelectorAll('section').forEach(node => {
