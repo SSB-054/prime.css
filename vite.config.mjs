@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import fs from 'fs'
 import path from 'path'
+import data from './package.json';
 
 // Helper function to ensure directory exists
 function ensureDirectoryExistence(filePath) {
@@ -24,7 +25,7 @@ function updateHtmlWithCdnLinks(inputString, cdnBase) {
       const startIndex = line.indexOf(startPlaceholder);
       const endIndex = line.indexOf(endPlaceholder, startIndex);
       if (startIndex !== -1 || endIndex !== -1) {
-        return line.slice(startIndex + startPlaceholder.length, endIndex)
+        return line.slice(startIndex + startPlaceholder.length, endIndex).replace('@main/', `@${data['version']}/`)
       }
     }
     return line
