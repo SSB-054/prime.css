@@ -34,6 +34,9 @@ You can easily include our CSS library in your project using the following CDN l
 
 <!-- https://iconoir.com/-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/iconoir.css">
+<!-- Typer.js -->
+<script type="module" src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/typer.js"></script>
+
 ```
 
 
