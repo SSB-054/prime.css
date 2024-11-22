@@ -1,28 +1,25 @@
 # Prime.css
-
-**prime.css** is a minimalistic yet powerful bundle of essential CSS and JavaScript libraries designed for quick setup and streamlined development. 
-This package provides all the basic tools you need to start building responsive, modern web applications without the overhead of unnecessary dependencies.
+A minimalistic CSS/JS library that embraces simplicity and works directly with HTML elements. No build tools, no complexity - just the essentials you need.
 
 **Maintainer : Suraj**  
 Email: [surajsinghbisht054@gmail.com](mailto:surajsinghbisht054@gmail.com)
 
 
-## Why?
-As a web developer working with **Django** and inspired by the minimalistic approach of **HTMX**, 
-I created this repository to bundle together a few essential front-end tools. 
-The goal is to provide an easy way for developers to get started with web development, with the most commonly used libraries included in a simple, one-shot CDN.
+## Why prime.css?
+Look, we've all been there - drowning in a sea of dependencies, fighting with build tools, and wondering why something so simple became so complex. That's why I created prime.css.
+Think of it as htmx's companion. While htmx handles your Ajax needs, prime.css takes care of everything else you need for a clean, responsive UI - without the bloat.
 
 
-## Why Use This Bundle?
+## Core Principles
 
-- **Minimalistic**: Contains only the most essential libraries to get started, so you don’t have to worry about bloated code.
-- **Quick Setup**: Just use the CDN provided in this repo to include all the required packages in your project in one go.
-- **Django Friendly**: Perfect for developers using Django as their backend framework, since it's designed with that in mind.
-- **Future Proof**: The project is open to adding more libraries and improvements, and contributions are welcome.
+- Zero Build Tools: Drop it in and it works
+- HTML-First: Works directly with HTML elements - no special classes or frameworks to learn
+- Browser-Native: Embraces and enhances native browser components
+- Minimalistic: Every feature has to earn its place
+- Fast: Minimal CDN links, maximum performance
 
-## Using the Library via CDN
 
-You can easily include our CSS library in your project using the following CDN link:
+## Getting Started via CDN
 
 ```html
 <!-- BASE -->
@@ -39,4 +36,10 @@ You can easily include our CSS library in your project using the following CDN l
 
 ```
 
+## Contributing
+I'll be honest - this is early stage stuff. I've borrowed ideas and code from other MIT-licensed projects (standing on the shoulders of giants, right?). If you're tired of complexity and want to build something truly simple and useful, I'd love your help.
+Check out the Contributing Guide to get started.
 
+
+## License
+MIT
