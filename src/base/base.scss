@@ -241,15 +241,24 @@ nav {
     width: 100%;
     margin: auto;
     padding: 0.25rem;
+    font-size: 1rem;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid transparent;
+
+    &:has(> a) {
+        justify-content: end;
+        gap: 1rem;
+
+    }
 
     [mobile-responsive] {
-        cursor: pointer;
         padding: 0.55rem;
         border-radius: 0.25rem;
         font-size: 1.5rem;
-        color: var(--primary-700) !important;
         display: none;
-        border: 1px solid transparent;
     }
 
     [mobile-responsive]:hover {
@@ -257,57 +266,9 @@ nav {
 
     }
 
-    a.active {
-        color: var(--primary-700) !important;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        border-bottom: 1px solid var(--primary-100);
-    }
-
     a {
         margin: 0.25rem;
         border: 1px solid transparent;
-    }
-
-    a:hover {
-        cursor: pointer;
-        color: var(--primary-700) !important;
-        filter: brightness(1.09);
-    }
-
-    a.primary {
-        color: var(--primary-800) !important;
-        font-weight: 600;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        border-bottom: 1px solid var(--primary-500);
-    }
-
-    a.primary:hover {
-        border-bottom-left-radius: var(--border-radius);
-        border-bottom-right-radius: var(--border-radius);
-    }
-}
-
-
-/* Add a little padding to ensure spacing is correct between content and nav */
-main {
-    padding-top: 1.5rem;
-    margin: auto;
-}
-
-
-/* Format navigation */
-
-nav {
-    font-size: 1rem;
-    line-height: 2;
-    padding: 1rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    a {
         margin: 1rem 1rem 0 0;
         color: var(--text) !important;
         display: inline-block;
@@ -315,15 +276,33 @@ nav {
         text-decoration: none;
         transition: 0.4s;
         font-weight: 500;
-    }
 
-    a:hover {
-        background-color: var(--surface-100);
-        cursor: pointer;
-    }
+        &.active {
+            color: var(--primary-700) !important;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom: 1px solid var(--primary-100);
+        }
 
-    a.current:hover {
-        text-decoration: none;
+        &:hover {
+            cursor: pointer;
+            filter: brightness(1.09);
+            color: var(--primary-700) !important;
+            transition: color 0.3s ease;
+        }
+
+        &.primary {
+            color: var(--primary-800) !important;
+            font-weight: 600;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom: 1px solid var(--primary-500);
+
+            &:hover {
+                border-bottom-left-radius: var(--border-radius);
+                border-bottom-right-radius: var(--border-radius);
+            }
+        }
     }
 
     div {
@@ -333,32 +312,35 @@ nav {
 
     }
 }
+
+
 @media (min-width: 768px) {
     nav[horizontal] {
         flex-direction: column;
         align-items: start;
         gap: 0.65rem;
+
         a {
             border-bottom-width: 1px;
             border-top-width: 0px;
             border-left-width: 0px;
             border-right-width: 0px;
-            border-color: var(--surface-300);
+            border-color: var(--surface-border);
             width: 100%;
         }
-    
+
     }
-    
-}
-
-
-
-nav:has(> a) {
-    justify-content: end;
-    gap: 1rem;
 
 }
 
+
+
+
+/* Add a little padding to ensure spacing is correct between content and nav */
+main {
+    padding-top: 1.5rem;
+    margin: auto;
+}
 
 dialog {
     border: 1px solid var(--surface-border);
@@ -446,13 +428,13 @@ h6 {
 a {
     margin: 0.1rem;
     font-size: clamp(1rem, 2.5vw, 1.125rem);
+    text-decoration: none;
 
-    &.clean {
-        text-decoration: none;
+    &.underline {
+        text-decoration: underline;
     }
 
     &:hover {
-        text-decoration: none;
         filter: grayscale(80%);
     }
 }
@@ -463,9 +445,6 @@ a:not([role="button"]):visited {
     color: var(--primary-color);
 }
 
-a[role="button"] {
-    text-decoration: none;
-}
 
 
 
@@ -747,7 +726,7 @@ mark {
 
 img,
 video {
-    max-width: 100%;
+    max-width: min(100%, 90vw);
     height: auto;
     border-radius: var(--border-radius);
     border: 1px solid transparent;
@@ -849,7 +828,7 @@ div {
 
         &.secondary {
             background: var(--surface-100);
-            color: var(--surface-700);
+            color: var(--text-color-secondary);
 
             &.outlined {
                 background: transparent;
@@ -921,8 +900,8 @@ div {
     }
 
     &.secondary {
-        background: var(--surface-100);
-        color: var(--surface-700);
+        background: var(--surface-50);
+        color: var(--text-color-secondary);
 
         &.outlined {
             border: 1px solid var(--surface-200);
