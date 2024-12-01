@@ -39,7 +39,7 @@ Think of it as htmx's companion. While htmx handles your Ajax needs, prime.css t
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/animate.css">
 
 <!-- https://lucide.dev/icons/  [Optional] -->
-<script type="module" src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/lucide.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/lucide.js"></script>
 
 ```
 
