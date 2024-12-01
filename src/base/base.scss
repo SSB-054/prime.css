@@ -345,7 +345,8 @@ main {
 dialog {
     border: 1px solid var(--surface-border);
     border-radius: var(--border-radius);
-
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: fit-content;
     h1,
     h2,
     h3,
@@ -1316,123 +1317,58 @@ figcaption {
     }
 }
 
-
-:root {
-    /* Facebook */
-    --facebook-bg: #4267B2;
-    --facebook-color: #ffffff;
-    --facebook-border-color: #2f4a80;
-
-    /* Twitter/X */
-    --twitter-bg: #000000;
-    --twitter-color: #ffffff;
-    --twitter-border-color: #2f3336;
-
-    /* Instagram */
-    --instagram-bg: #E4405F;
-    --instagram-color: #ffffff;
-    --instagram-border-color: #c13584;
-
-    /* LinkedIn */
-    --linkedin-bg: #0077B5;
-    --linkedin-color: #ffffff;
-    --linkedin-border-color: #005582;
-
-    /* YouTube */
-    --youtube-bg: #FF0000;
-    --youtube-color: #ffffff;
-    --youtube-border-color: #cc0000;
-
-    /* Pinterest */
-    --pinterest-bg: #E60023;
-    --pinterest-color: #ffffff;
-    --pinterest-border-color: #ad081c;
-
-    /* TikTok */
-    --tiktok-bg: #000000;
-    --tiktok-color: #ffffff;
-    --tiktok-border-color: #69c9d0;
-
-    /* WhatsApp */
-    --whatsapp-bg: #25D366;
-    --whatsapp-color: #ffffff;
-    --whatsapp-border-color: #128c7e;
-
-    /* Reddit */
-    --reddit-bg: #FF4500;
-    --reddit-color: #ffffff;
-    --reddit-border-color: #cc3700;
-
-    /* Discord */
-    --discord-bg: #5865F2;
-    --discord-color: #ffffff;
-    --discord-border-color: #4752c4;
+[popover]{
+    position: fixed;
+    cursor: pointer;
+    border: 1px solid var(--surface-border);
+    border-radius: var(--border-radius);
+    background: var(--surface-ground);
+    padding: 0.15rem;
+    margin: 0.15rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    transition: opacity 0.2s transform 0.2s;
+    transform: scale(0.9);
+    ul {
+        list-style: none;
+        padding: 0.25rem 0.45rem;
+        margin: 0px;
+        li {
+            padding: 0.25rem 0.45rem;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: var(--border-radius);
+            &:hover {
+                background: var(--surface-section);
+            }
+        }
+    }
 }
-
-
-.facebook {
-    background: var(--facebook-bg);
-    color: var(--facebook-color);
-    border-color: var(--facebook-border-color);
-}
-
-.twitter {
-    background: var(--twitter-bg);
-    color: var(--twitter-color);
-    border-color: var(--twitter-border-color);
-}
-
-.instagram {
-    background: var(--instagram-bg);
-    color: var(--instagram-color);
-    border-color: var(--instagram-border-color);
-}
-
-.linkedin {
-    background: var(--linkedin-bg);
-    color: var(--linkedin-color);
-    border-color: var(--linkedin-border-color);
-}
-
-.youtube {
-    background: var(--youtube-bg);
-    color: var(--youtube-color);
-    border-color: var(--youtube-border-color);
-}
-
-.pinterest {
-    background: var(--pinterest-bg);
-    color: var(--pinterest-color);
-    border-color: var(--pinterest-border-color);
-}
-
-.tiktok {
-    background: var(--tiktok-bg);
-    color: var(--tiktok-color);
-    border-color: var(--tiktok-border-color);
-}
-
-.whatsapp {
-    background: var(--whatsapp-bg);
-    color: var(--whatsapp-color);
-    border-color: var(--whatsapp-border-color);
-}
-
-.reddit {
-    background: var(--reddit-bg);
-    color: var(--reddit-color);
-    border-color: var(--reddit-border-color);
-}
-
-.discord {
-    background: var(--discord-bg);
-    color: var(--discord-color);
-    border-color: var(--discord-border-color);
-}
-
-.social-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
+  
 
 @import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap";
+@import 'primeflex/core/_variables';
+@import 'primeflex/core/_mixins';
+@import 'primeflex/core/_grid';
+@import 'primeflex/core/_colors';
+// @import 'primeflex/core/_formlayout';
+@import 'primeflex/core/_display';
+@import 'primeflex/core/_typography';
+@import 'primeflex/core/_flexbox';
+@import 'primeflex/core/_gap';
+@import 'primeflex/core/_spacing';
+@import 'primeflex/core/_elevation';
+@import 'primeflex/core/_border';
+@import 'primeflex/core/_borderradius';
+@import 'primeflex/core/_size';
+@import 'primeflex/core/_position';
+@import 'primeflex/core/_overflow';
+@import 'primeflex/core/_zindex';
+@import 'primeflex/core/_image';
+@import 'primeflex/core/_userselect';
+@import 'primeflex/core/_liststyle';
+@import 'primeflex/core/_misc';
+@import 'primeflex/core/_transition';
+@import 'primeflex/core/_transform';
+@import 'primeflex/core/_animation';
+@import 'primeflex/core/_utils';

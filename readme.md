@@ -23,16 +23,23 @@ Think of it as htmx's companion. While htmx handles your Ajax needs, prime.css t
 
 ```html
 <!-- BASE -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.5/dist/base/bundle.min.css">
-<script  type="module" src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.5/dist/base/bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.6/dist/base/bundle.min.css">
+<script  type="module" src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.6/dist/base/bundle.min.js"></script>
 
-<!-- PRIMEFLEX.CSS WITH THEMES -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.5/dist/theme/bundle.min.css">
+<!-- PRIMEFLEX.CSS WITH THEMES  [Optional]-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@v0.0.6/dist/theme/bundle.min.css">
 
-<!-- https://iconoir.com/-->
+<!-- https://iconoir.com/ [Optional]-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/iconoir.css">
-<!-- Typer.js -->
+
+<!-- https://github.com/straversi/Typer.js  [Optional] -->
 <script type="module" src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/typer.js"></script>
+
+<!-- https://github.com/animate-css/animate.css  [Optional] -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/animate.css">
+
+<!-- https://lucide.dev/icons/  [Optional] -->
+<script type="module" src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/lucide.js"></script>
 
 ```
 

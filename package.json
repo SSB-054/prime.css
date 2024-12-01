@@ -1,6 +1,6 @@
 {
   "name": "prime.css",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "minimalistic yet powerful bundle of essential CSS and JavaScript libraries designed for quick setup and streamlined development. This package provides all the basic tools you need to start building responsive, modern web applications without the overhead of unnecessary dependencies.",
   "scripts": {
     "dev": "vite",

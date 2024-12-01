@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prime.css</title>
     <link rel="stylesheet" href="src/base/base.scss"><!--REPLACE_START <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/dist/base/bundle.min.css"> REPLACE_END-->
-    <link rel="stylesheet" href="src/theme/theme.scss">    <!--REPLACE_START <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/dist/theme/bundle.min.css"> REPLACE_END-->
-    <link rel="stylesheet" href="assets/iconoir.css">    <!--REPLACE_START <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/iconoir.css"> REPLACE_END-->
+    <script src="assets/lucide.js"></script>    <!--REPLACE_START <script src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/assets/lucide.js"></script> REPLACE_END-->
     <script src="src/base/base.js" type="module"></script>    <!--REPLACE_START <script  type="module" src="https://cdn.jsdelivr.net/gh/surajsinghbisht054/prime.css@main/dist/base/bundle.min.js"></script> REPLACE_END-->
 
 </head>
@@ -54,33 +53,10 @@
         <div class="my-4 px-auto">
             <a href="https://github.com/surajsinghbisht054/prime.css" class="border-1 border-blue-300 mx-auto flex gap-2 no-underline w-8rem bg-blue-50 p-2 border-round justify-content-center text-800 font-semibold">
                 <span>Fork Me</span>
-                <i class="iconoir-github mx-2 text-xl font-semibold my-auto"></i>
+                <i data-lucide="github"></i>
             </a>
         </div>
     </header>
-
-    <!-- <h2>Change Themes</h2>
-    <section>
-        <div class="flex gap-2 my-4">
-            <button class="bg-gray-100 text-gray-800"
-                onclick="document.querySelector('html').setAttribute('theme','light')">Light</button>
-            <button class="bg-gray-700 text-gray-50"
-                onclick="document.querySelector('html').setAttribute('theme','dark')">Dark</button>
-            <button class="bg-green-100 text-green-800"
-                onclick="document.querySelector('html').setAttribute('theme','green')">Green</button>
-            <button class="bg-blue-100 text-blue-800"
-                onclick="document.querySelector('html').setAttribute('theme','blue')">Blue</button>
-            <button class="bg-purple-100 text-purple-800"
-                onclick="document.querySelector('html').setAttribute('theme','purple')">Purple</button>
-            <button class="bg-pink-100 text-pink-800"
-                onclick="document.querySelector('html').setAttribute('theme','pink')">Pink</button>
-            <button class="bg-orange-100 text-orange-800"
-                onclick="document.querySelector('html').setAttribute('theme','orange')">Orange</button>
-        </div>
-        <div>
-            <pre>document.querySelector(&#39;html&#39;).setAttribute(&#39;theme&#39;,&#39;green&#39;);</pre>
-        </div>
-    </section> -->
 
 
     <!-- Headings -->
@@ -225,6 +201,23 @@
 
 
 
+    <h2>PopOver-Menu </h2>
+    <section>
+        <button popovertarget="example-popover-menu">
+            <i data-lucide="user-circle"></i>
+        </button>
+        <div popover id="example-popover-menu">
+            <ul>
+                <li>Profile</li>
+                <li>Settings</li>
+                <li>Help</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+    </section>
+    <pre></pre>
+
+
     <h3>Unordered List</h3>
     <section>
         <ul>
@@ -290,34 +283,7 @@
     </section>
     <pre></pre>
 
-    <h3>Social Media Buttons</h3>
-    <section class="flex gap-2">
-        <a role="button" class="facebook">
-            <i class="text-6xl iconoir-facebook"></i>
-        </a>
-        <a role="button" class="twitter">
-            <i class="text-6xl iconoir-x"></i>
-        </a>
-        <a role="button" class="instagram">
-            <i class="text-6xl iconoir-instagram"></i>
-        </a>
-        <a role="button" class="linkedin">
-            <i class="text-6xl iconoir-linkedin"></i>
-        </a>
-        <a role="button" class="youtube">
-            <i class="text-6xl iconoir-youtube"></i>
-        </a>
-        <a role="button" class="pinterest">
-            <i class="text-6xl iconoir-pinterest"></i>
-        </a>
-        <a role="button" class="tiktok">
-            <i class="text-6xl iconoir-tiktok"></i>
-        </a>
-        <a role="button" class="discord">
-            <i class="text-6xl iconoir-discord"></i>
-        </a>
-    </section>
-    <pre></pre>
+
     <h3>Progress Indicators</h3>
     <section>
         <div>
@@ -755,6 +721,8 @@
                 node.nextElementSibling.textContent = innerHTML;
             }
         })
+      lucide.createIcons();
+  
     </script>
 </body>
 
