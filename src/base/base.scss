@@ -2,7 +2,7 @@
     --text-color: #495057;
     --text-color-secondary: #6c757d;
     --border-radius: 6px;
-    --primary-color: #3B82F6;
+    --primary-color: #326fd1;
     --primary-color-text: #ffffff;
     --surface-ground: #eff3f8;
     --surface-section: #ffffff;
@@ -526,8 +526,9 @@ input[type="reset"]:focus,
 input[type="reset"]:enabled:hover,
 input[type="button"]:focus,
 input[type="button"]:enabled:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.05);
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -820,61 +821,38 @@ div {
         &.primary {
             background: var(--primary-color);
             color: var(--primary-color-text);
-
-            &.outlined {
-                background: transparent;
-                border: 1px solid var(--primary-200);
-            }
+            
         }
 
         &.secondary {
-            background: var(--surface-100);
+            background: var(--surface-200);
             color: var(--text-color-secondary);
-
-            &.outlined {
-                background: transparent;
-                border: 1px solid var(--surface-200);
-            }
+            
         }
 
         &.danger {
-            background: var(--red-50);
+            background: var(--red-100);
             color: var(--red-700);
-
-            &.outlined {
-                background: transparent;
-                border: 1px solid var(--red-200);
-            }
+            
         }
 
         &.warning {
-            background: var(--yellow-50);
+            background: var(--yellow-100);
             color: var(--yellow-700);
-
-            &.outlined {
-                background: transparent;
-                border: 1px solid var(--yellow-200);
-            }
+            
         }
 
         &.success {
-            background: var(--green-50);
+            background: var(--green-100);
             color: var(--green-700);
-
-            &.outlined {
-                background: transparent;
-                border: 1px solid var(--green-200);
-            }
+            
         }
 
         &.info {
-            background: var(--blue-50);
-            color: var(--blue-700);
+            background: var(--cyan-100);
+            color: var(--cyan-700);
+            
 
-            &.outlined {
-                background: transparent;
-                border: 1px solid var(--blue-200);
-            }
         }
 
         &.small {
@@ -901,12 +879,10 @@ div {
     }
 
     &.secondary {
-        background: var(--surface-50);
+        background: var(--surface-200);
         color: var(--text-color-secondary);
 
-        &.outlined {
-            border: 1px solid var(--surface-200);
-        }
+        
 
         &.alert {
             padding: 0.55rem;
@@ -919,12 +895,8 @@ div {
     }
 
     &.danger {
-        background: var(--red-50);
+        background: var(--red-100);
         color: var(--red-700);
-
-        &.outlined {
-            border: 1px solid var(--red-200);
-        }
 
         &.alert {
             padding: 0.55rem;
@@ -937,12 +909,9 @@ div {
     }
 
     &.warning {
-        background: var(--yellow-50);
+        background: var(--yellow-100);
         color: var(--yellow-700);
 
-        &.outlined {
-            border: 1px solid var(--yellow-200);
-        }
 
         &.alert {
             padding: 0.55rem;
@@ -955,12 +924,9 @@ div {
     }
 
     &.success {
-        background: var(--green-50);
+        background: var(--green-100);
         color: var(--green-700);
 
-        &.outlined {
-            border: 1px solid var(--green-200);
-        }
 
         &.alert {
             padding: 0.55rem;
@@ -973,12 +939,9 @@ div {
     }
 
     &.info {
-        background: var(--blue-50);
+        background: var(--blue-100);
         color: var(--blue-700);
 
-        &.outlined {
-            border: 1px solid var(--blue-200);
-        }
 
         &.alert {
             padding: 0.55rem;
