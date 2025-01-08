@@ -1,6 +1,8 @@
 import './base.scss';
+const prime = {}
 
-window.refreshUI = () => {
+// refresh all the UI elements
+prime.refresh = () => {
     const bSelector = (query, flag, callback) => {
         return document.querySelectorAll(`${query}:not([${flag}])`).forEach(el => {
             callback(el);
@@ -56,6 +58,7 @@ window.refreshUI = () => {
             }
         })
     })
+
     document.querySelectorAll("[popovertarget]").forEach(target => {
         const popoverId = target.getAttribute('popovertarget')
         if (popoverId) {
@@ -113,6 +116,117 @@ window.refreshUI = () => {
     })
 
 }
-document.addEventListener('DOMContentLoaded', () => {
-    window.refreshUI();
+prime.onready = (callback) => {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', callback);
+    } else {
+        callback();
+    }
+}
+
+(function () {
+    const toastContainer = document.createElement('div');
+    toastContainer.id = 'prime-toast-container';
+    const toastContainerStyle = document.createElement('style');
+    toastContainerStyle.innerHTML = `
+    #prime-toast-container {
+        position: fixed;
+        top: 20px;
+        right: 80px;
+        z-index: 1000;
+        font-size: 16px;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: transparent;
+    }
+    #prime-toast-container div{
+        padding: 0.8rem 1rem;
+        font-family: system-ui, -apple-system, sans-serif;
+        min-width: 200px;
+        max-width: 300px;
+        text-wrap: auto;
+        line-height: 1.3;
+    }
+    @media screen and (max-width: 768px) {
+        #prime-toast-container {
+            top: 10px;
+            right: 10px;
+            width: 90vw;
+            align-items: center;
+            gap: 0.55rem;
+        }
+        
+    }
+
+    `;
+    document.head.appendChild(toastContainerStyle);
+    document.body.appendChild(toastContainer);
+    prime.showToast = (innerHTML, type = 'info', config) => {
+        let defaultConfig = {
+            duration: 5000,
+            autohide: true,
+            additionalClasses: '',
+            additionalStyles: ''
+        };
+        if (config) {
+            defaultConfig = { ...defaultConfig, ...config };
+        }
+        const toast = document.createElement('div');
+        toast.innerHTML = innerHTML;
+        toast.className = 'border-round shadow-2 font-semibold cursor-pointer ' + defaultConfig.additionalClasses;
+        // Add styles
+        toast.style.cssText = `animation: scalein 0.5s, fadeout 0.5s ${defaultConfig.duration / 1000 - 0.5}s;` + defaultConfig.additionalStyles;
+
+        // Set background color based on type
+        switch (type) {
+            case 'success':
+                toast.style.backgroundColor = 'var(--green-100)';
+                toast.style.color = 'var(--green-700)';
+                toast.style.border = '1px solid var(--green-200)';
+                break;
+            case 'error':
+                toast.style.backgroundColor = 'var(--red-100)';
+                toast.style.color = 'var(--red-700)';
+                toast.style.border = '1px solid var(--red-200)';
+                break;
+            case 'warning':
+                toast.style.backgroundColor = 'var(--yellow-100)';
+                toast.style.color = 'var(--yellow-700)';
+                toast.style.border = '1px solid var(--yellow-200)';
+                break;
+            default:
+                toast.style.backgroundColor = 'var(--gray-100)';
+                toast.style.color = 'var(--gray-700)';
+                toast.style.border = '1px solid var(--gray-200)';
+
+        }
+        toast.addEventListener('click', () => {
+            try{
+                toastContainer.removeChild(toast);
+            }catch(e){
+            }
+        });
+        // Add to DOM
+        toastContainer.appendChild(toast);
+        if (defaultConfig.autohide) {
+            // Remove after defaultConfig.duration
+            setTimeout(() => {
+                try{
+                    toastContainer.removeChild(toast);
+                }catch(e){
+                }
+            }, defaultConfig.duration);
+        }
+    }
+})();
+
+
+
+prime.onready(() => {
+    prime.refresh();
 })
+
+// Expose the function to the global scope
+window.prime = prime;
