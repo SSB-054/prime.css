@@ -782,24 +782,28 @@ video {
     border-radius: var(--border-radius);
     border: 1px solid var(--surface-border);
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    
 }
 
-img:hover,
-video:hover {
-    border: 1px solid var(--primary-500);
-}
 
 figure {
     margin: 0;
+    img, video {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    }
+    img:hover,
+    video:hover {
+        border: 1px solid var(--primary-500);
+    }
+    
 }
-
 figcaption {
     font-size: 0.9rem;
     color: var(--text-color-secondary);
     text-align: center;
     margin-bottom: 1rem;
 }
+
 
 blockquote {
     font-size: clamp(1.125rem, 3vw, 1.25rem);
@@ -1388,7 +1392,7 @@ button:has(svg), a:has(svg) {
     }
 } 
 
-@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import 'primeflex/core/_variables';
 @import 'primeflex/core/_mixins';
 @import 'primeflex/core/_grid';
@@ -1414,3 +1418,8 @@ button:has(svg), a:has(svg) {
 @import 'primeflex/core/_transform';
 @import 'primeflex/core/_animation';
 @import 'primeflex/core/_utils';
+
+p {
+    font-family: "Source Code Pro", serif;
+    font-optical-sizing: auto;
+}
