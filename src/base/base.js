@@ -128,6 +128,10 @@ prime.onready = (callback) => {
     const toastContainer = document.createElement('div');
     toastContainer.id = 'prime-toast-container';
     const toastContainerStyle = document.createElement('style');
+    const infoIconSvg = '<svg style="color: var(--blue-600);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>';
+    const checkIconSvg = '<svg style="color: var(--green-600);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>';    
+    const errorIconSvg = '<svg style="color: var(--red-600);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ban"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>';
+    const warningIconSvg = '<svg style="color: var(--yellow-600);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>';
     toastContainerStyle.innerHTML = `
     #prime-toast-container {
         position: fixed;
@@ -148,6 +152,8 @@ prime.onready = (callback) => {
         max-width: 300px;
         text-wrap: auto;
         line-height: 1.3;
+        background-color: var(--surface-section);
+        position: relative;
     }
     @media screen and (max-width: 768px) {
         #prime-toast-container {
@@ -158,12 +164,10 @@ prime.onready = (callback) => {
             gap: 0.55rem;
         }
         
-    }
-
-    `;
+    }`;
     document.head.appendChild(toastContainerStyle);
     document.body.appendChild(toastContainer);
-    prime.showToast = (innerHTML, type = 'info', config) => {
+    prime.showToast = (message, type = 'info', config) => {
         let defaultConfig = {
             duration: 5000,
             autohide: true,
@@ -174,34 +178,29 @@ prime.onready = (callback) => {
             defaultConfig = { ...defaultConfig, ...config };
         }
         const toast = document.createElement('div');
-        toast.innerHTML = innerHTML;
-        toast.className = 'border-round shadow-2 font-semibold cursor-pointer ' + defaultConfig.additionalClasses;
+        let innerHTML = '';
+        toast.className = 'border-round shadow-1 font-semibold cursor-pointer ' + defaultConfig.additionalClasses;
         // Add styles
         toast.style.cssText = `animation: scalein 0.5s, fadeout 0.5s ${defaultConfig.duration / 1000 - 0.5}s;` + defaultConfig.additionalStyles;
 
         // Set background color based on type
         switch (type) {
             case 'success':
-                toast.style.backgroundColor = 'var(--green-100)';
-                toast.style.color = 'var(--green-700)';
-                toast.style.border = '1px solid var(--green-200)';
+                innerHTML += checkIconSvg;
                 break;
             case 'error':
-                toast.style.backgroundColor = 'var(--red-100)';
-                toast.style.color = 'var(--red-700)';
-                toast.style.border = '1px solid var(--red-200)';
+                innerHTML += errorIconSvg;
                 break;
             case 'warning':
-                toast.style.backgroundColor = 'var(--yellow-100)';
-                toast.style.color = 'var(--yellow-700)';
-                toast.style.border = '1px solid var(--yellow-200)';
+                innerHTML += warningIconSvg;
                 break;
             default:
-                toast.style.backgroundColor = 'var(--gray-100)';
-                toast.style.color = 'var(--gray-700)';
-                toast.style.border = '1px solid var(--gray-200)';
+                innerHTML += infoIconSvg;
 
         }
+        innerHTML += `<p class="m-1 p-0">${message}</p>`
+        innerHTML += '<span class="hover:cursor-pointer hover:surface-50 p-1 border-round" style="position: absolute;right:4px;top:4px;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>';
+        toast.innerHTML = innerHTML 
         toast.addEventListener('click', () => {
             try{
                 toastContainer.removeChild(toast);

@@ -181,6 +181,7 @@
     img,
     video {
         opacity: 0.6;
+        
     }
 }
 
@@ -461,10 +462,19 @@ input[type="button"] {
     font-size: 1rem;
     background: var(--primary-color);
     color: var(--primary-color-text);
-    padding: 0.7rem 0.9rem;
+    padding: 0.6rem 0.8rem;
     margin: 0.5rem 0;
     transition: 0.4s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width: fit-content;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
 }
+
+
+
 
 input[type="file"] {
     border: 1px solid var(--surface-200);
@@ -475,6 +485,7 @@ input[type="file"] {
     padding: 0.7rem 0.9rem;
     margin: 0.5rem 0;
     transition: 0.4s;
+    
 }
 
 
@@ -489,10 +500,10 @@ input[type="radio"][disabled],
 select[disabled] {
     cursor: default;
     opacity: 0.5;
-    cursor: not-allowed;
     background: var(--primary-color);
     color: var(--primary-color-text);
     pointer-events: none;
+    width: fit-content;
 
 }
 
@@ -506,11 +517,40 @@ select:disabled {
 input[type="range"] {
     padding: 0;
 }
+@keyframes wave-46 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.1);
+      }
+  }
 
 input[type="checkbox"],
 input[type="radio"] {
     background-color: var(--surface-50);
+    box-sizing: border-box;
+    outline: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    padding: 4px;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid var(--surface-border);
+    border-radius: var(--border-radius);
+
 }
+
+
+input[type="checkbox"]:checked,input[type="radio"]:checked {
+    animation: wave-46 0.4s ease-in-out;
+}
+
 
 /* Set the cursor to '?' while hovering over an abbreviation */
 abbr {
@@ -530,6 +570,7 @@ input[type="button"]:enabled:hover {
     filter: brightness(1.05);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+   
 }
 
 
@@ -539,6 +580,7 @@ input[type="radio"]:focus,
 input[type="radio"]:enabled:hover {
     filter: brightness(1.02);
     cursor: pointer;
+    transition: all 0.4s ease;
 }
 
 /* Format the expanding box */
@@ -616,12 +658,18 @@ input {
     background: var(--surface-section);
     border: 1px solid var(--surface-border);
     border-radius: var(--border-radius);
-    box-shadow: none;
     box-sizing: border-box;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px;
     width: 60%;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    font-weight: normal;
+    transition: border-color 150ms ease-in-out 0s;
+    outline: none;
+    &:hover{
+        box-shadow: rgba(149, 157, 165, 0.15) 0px 3px 6px 0px;
+    }
 }
 
 /* Add arrow to  */
@@ -732,8 +780,9 @@ video {
     max-width: min(100%, 90vw);
     height: auto;
     border-radius: var(--border-radius);
-    border: 1px solid transparent;
+    border: 1px solid var(--surface-border);
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 
 img:hover,
@@ -818,15 +867,22 @@ div {
         padding: 0.25rem 0.65rem;
         font-size: 0.75rem;
         font-weight: 600;
-
+        cursor: pointer;
+        transition: 0.4s;
+        margin: 0.25rem;
+        text-align: center;
+        box-sizing: border-box;
+        box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px;
+        &:hover {
+            filter: brightness(1.05);
+        }
         &.primary {
             background: var(--primary-color);
             color: var(--primary-color-text);
-            
         }
 
         &.secondary {
-            background: var(--surface-200);
+            background: var(--surface-50);
             color: var(--text-color-secondary);
             
         }
@@ -874,19 +930,21 @@ div {
             margin: 0.45rem;
             border-radius: var(--border-radius);
             cursor: pointer;
+            box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px;
 
         }
 
     }
 
     &.secondary {
-        background: var(--surface-ground);
+        background: var(--surface-50);
         color: var(--primary-color);
-        border: 1px solid var(--surface-border);
-
+        font-weight: 600;
+        border:  none;
+        box-shadow: none;
         &.alert {
             padding: 0.55rem;
-            border: 1px solid var(--surface-200);
+            border: 1px solid var(--surface-50);
             margin: 0.45rem;
             border-radius: var(--border-radius);
             cursor: pointer;
@@ -895,10 +953,10 @@ div {
     }
 
     &.danger {
-        background: var(--red-100);
-        color: var(--red-700);
-        border: 1px solid var(--red-200);
-            
+        background: var(--red-200);
+        color: var(--red-900);
+        border: 1px solid var(--red-300);
+        
         &.alert {
             padding: 0.55rem;
             border: 1px solid var(--red-200);
@@ -910,9 +968,9 @@ div {
     }
 
     &.warning {
-        background: var(--yellow-100);
-        color: var(--yellow-700);
-        border: 1px solid var(--yellow-200);
+        background: var(--yellow-200);
+        color: var(--yellow-900);
+        border: 1px solid var(--yellow-300);
             
 
 
@@ -927,10 +985,9 @@ div {
     }
 
     &.success {
-        background: var(--green-100);
-        color: var(--green-700);
-        border: 1px solid var(--green-200);
-            
+        background: var(--green-200);
+        color: var(--green-900);
+        border: 1px solid var(--green-300);
 
         &.alert {
             padding: 0.55rem;
@@ -943,9 +1000,9 @@ div {
     }
 
     &.info {
-        background: var(--indigo-100);
-        color: var(--indigo-700);
-        border: 1px solid var(--indigo-200);
+        background: var(--indigo-200);
+        color: var(--indigo-900);
+        border: 1px solid var(--indigo-300);
             
 
         &.alert {
@@ -964,7 +1021,8 @@ div {
     }
 
     &.large {
-        padding: 1rem 1.1rem;
+        padding: 0.8rem 1.1rem;
+        font-size: 1.15rem;
     }
 }
 
@@ -1280,7 +1338,7 @@ figcaption {
     img {
         max-width: 90%;
         max-height: 90%;
-        border: 3px solid #FFF;
+        border: 1px solid #FFF;
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
     }
 }
@@ -1291,9 +1349,9 @@ figcaption {
     border: 1px solid var(--surface-border);
     border-radius: var(--border-radius);
     background: var(--surface-ground);
-    padding: 0.15rem;
-    margin: 0.15rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.10rem 0.15rem;
+    margin: 0.15rem 0.12rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
     width: fit-content;
     transition: opacity 0.2s transform 0.2s;
     transform: scale(0.9);
