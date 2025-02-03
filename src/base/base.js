@@ -59,6 +59,31 @@ prime.refresh = () => {
         })
     })
 
+    bSelector('table', 'full-screen-control', (table) => {
+        const innerHTML = table.innerHTML;
+        const container = document.createElement('div');
+        container.classList.add('full-screen-control');
+        container.innerHTML = `Full Screen <svg xmlns="http://www.w3.org/2000/svg" style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-expand"><path d="m15 15 6 6"/><path d="m15 9 6-6"/><path d="M21 16.2V21h-4.8"/><path d="M21 7.8V3h-4.8"/><path d="M3 16.2V21h4.8"/><path d="m3 21 6-6"/><path d="M3 7.8V3h4.8"/><path d="M9 9 3 3"/></svg>`
+        container.style.fontSize = '12px';
+        container.style.cursor = 'pointer';
+        container.style.display = 'flex';
+        container.style.alignItems = 'center';
+        container.style.justifyContent = 'start';
+        container.style.gap = '4px';
+        container.style.padding = '4px';
+        container.addEventListener('click', () => {
+            const tmpElement = document.createElement('div')
+            tmpElement.style.padding = '8px';
+            tmpElement.classList.add('zoom-in-box-preview-modal')
+            tmpElement.innerHTML = `<table style="background-color: var(--surface-ground);border-radius: 8px;">${innerHTML}</table>`
+            tmpElement.addEventListener('click', () => {
+                tmpElement.remove()
+            })
+            document.body.appendChild(tmpElement);
+        })
+        table.tHead.prepend(container);
+    })
+
     document.querySelectorAll("[popovertarget]").forEach(target => {
         const popoverId = target.getAttribute('popovertarget')
         if (popoverId) {
